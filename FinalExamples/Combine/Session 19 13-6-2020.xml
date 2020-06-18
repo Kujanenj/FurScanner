@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationVersion>2.4.6361.20159</ApplicationVersion>
+  <Number>19</Number>
+  <Created>2020-06-13T13:09:19-08:00</Created>
+  <Modified>2020-06-13T13:13:54-08:00</Modified>
+  <HasChanges>true</HasChanges>
+  <CurrentlyUsedGradingValues />
+  <GenderReset>true</GenderReset>
+  <CurrentGender>129</CurrentGender>
+  <CurrentLocation>
+    <HouseNumber>1</HouseNumber>
+    <CageNumber>4</CageNumber>
+    <IncrementDirection>Ascending</IncrementDirection>
+    <IncrementAmount>1</IncrementAmount>
+  </CurrentLocation>
+  <AnimalGradings />
+  <BreedingAnimals>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>400721</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>1</HouseNumber>
+        <CageNumber>1</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>1</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706881</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>1</HouseNumber>
+        <CageNumber>2</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>1</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604429</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>1</HouseNumber>
+        <CageNumber>3</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>1</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+  </BreedingAnimals>
+  <LastSavedPairingDate>2020-06-13T00:00:00-08:00</LastSavedPairingDate>
+  <LastSavedPairingMethod>Pairing</LastSavedPairingMethod>
+  <Pairings />
+  <LastSavedWhelpingDate>2020-06-13T00:00:00-08:00</LastSavedWhelpingDate>
+  <LastSavedWhelpingMethod>Normal</LastSavedWhelpingMethod>
+  <Whelpings>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604408</SampoId>
+      </FemaleId>
+      <Method>Normal</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604418</SampoId>
+      </FemaleId>
+      <Method>Normal</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706885</SampoId>
+      </FemaleId>
+      <Method>Normal</Method>
+    </Whelping>
+  </Whelpings>
+  <RunningTotalCount>6</RunningTotalCount>
+  <RunningNumberOfTheCount>178</RunningNumberOfTheCount>
+  <RunningMaleCount>0</RunningMaleCount>
+  <RunningFemaleCount>0</RunningFemaleCount>
+  <LitterCounts>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604408</SampoId>
+      </FemaleId>
+      <TotalCount>4</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604418</SampoId>
+      </FemaleId>
+      <TotalCount>5</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706885</SampoId>
+      </FemaleId>
+      <TotalCount>6</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+  </LitterCounts>
+  <FurfixLinks />
+  <Groups />
+  <Syncronizations />
+  <LastSavedFirstPairingDate>0001-01-01T00:00:00</LastSavedFirstPairingDate>
+  <LastSavedSecondPairingDate>0001-01-01T00:00:00</LastSavedSecondPairingDate>
+  <LastSavedThirdPairingDate>0001-01-01T00:00:00</LastSavedThirdPairingDate>
+  <WizardLaps />
+  <ApplicationErrors />
+  <IsDeserializing>false</IsDeserializing>
+</Session>

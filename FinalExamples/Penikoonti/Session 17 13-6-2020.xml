@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationVersion>2.4.6361.20159</ApplicationVersion>
+  <Number>17</Number>
+  <Created>2020-06-13T12:56:39-08:00</Created>
+  <Modified>2020-06-13T13:01:05-08:00</Modified>
+  <HasChanges>true</HasChanges>
+  <CurrentlyUsedGradingValues />
+  <GenderReset>true</GenderReset>
+  <CurrentGender>129</CurrentGender>
+  <CurrentLocation>
+    <HouseNumber>1</HouseNumber>
+    <CageNumber>1</CageNumber>
+    <IncrementDirection>Ascending</IncrementDirection>
+    <IncrementAmount>1</IncrementAmount>
+  </CurrentLocation>
+  <AnimalGradings />
+  <BreedingAnimals />
+  <LastSavedPairingDate>2020-06-13T00:00:00-08:00</LastSavedPairingDate>
+  <LastSavedPairingMethod>Pairing</LastSavedPairingMethod>
+  <Pairings />
+  <LastSavedWhelpingDate>2020-06-13T00:00:00-08:00</LastSavedWhelpingDate>
+  <LastSavedWhelpingMethod>LostAllLitters</LastSavedWhelpingMethod>
+  <Whelpings>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>400721</SampoId>
+      </FemaleId>
+      <Method>LostAllLitters</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706881</SampoId>
+      </FemaleId>
+      <Method>Creation</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604429</SampoId>
+      </FemaleId>
+      <Method>Empty</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604408</SampoId>
+      </FemaleId>
+      <Method>LostAllLitters</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604418</SampoId>
+      </FemaleId>
+      <Method>Creation</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706885</SampoId>
+      </FemaleId>
+      <Method>Empty</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706879</SampoId>
+      </FemaleId>
+      <Method>LostAllLitters</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>705685</SampoId>
+      </FemaleId>
+      <Method>Creation</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>803124</SampoId>
+      </FemaleId>
+      <Method>Empty</Method>
+    </Whelping>
+    <Whelping>
+      <WhelpingDate>2020-06-13T00:00:00-08:00</WhelpingDate>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>802004</SampoId>
+      </FemaleId>
+      <Method>LostAllLitters</Method>
+    </Whelping>
+  </Whelpings>
+  <RunningTotalCount>0</RunningTotalCount>
+  <RunningNumberOfTheCount>0</RunningNumberOfTheCount>
+  <RunningMaleCount>0</RunningMaleCount>
+  <RunningFemaleCount>0</RunningFemaleCount>
+  <LitterCounts />
+  <FurfixLinks />
+  <Groups />
+  <Syncronizations />
+  <LastSavedFirstPairingDate>0001-01-01T00:00:00</LastSavedFirstPairingDate>
+  <LastSavedSecondPairingDate>0001-01-01T00:00:00</LastSavedSecondPairingDate>
+  <LastSavedThirdPairingDate>0001-01-01T00:00:00</LastSavedThirdPairingDate>
+  <WizardLaps />
+  <ApplicationErrors />
+  <IsDeserializing>false</IsDeserializing>
+</Session>

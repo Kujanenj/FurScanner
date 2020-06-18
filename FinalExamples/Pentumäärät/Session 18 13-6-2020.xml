@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationVersion>2.4.6361.20159</ApplicationVersion>
+  <Number>18</Number>
+  <Created>2020-06-13T13:02:49-08:00</Created>
+  <Modified>2020-06-13T13:07:07-08:00</Modified>
+  <HasChanges>true</HasChanges>
+  <CurrentlyUsedGradingValues />
+  <GenderReset>true</GenderReset>
+  <CurrentGender>129</CurrentGender>
+  <CurrentLocation>
+    <HouseNumber>1</HouseNumber>
+    <CageNumber>1</CageNumber>
+    <IncrementDirection>Ascending</IncrementDirection>
+    <IncrementAmount>1</IncrementAmount>
+  </CurrentLocation>
+  <AnimalGradings />
+  <BreedingAnimals />
+  <LastSavedPairingDate>2020-06-13T00:00:00-08:00</LastSavedPairingDate>
+  <LastSavedPairingMethod>Pairing</LastSavedPairingMethod>
+  <Pairings />
+  <LastSavedWhelpingDate>2020-06-13T00:00:00-08:00</LastSavedWhelpingDate>
+  <LastSavedWhelpingMethod>Normal</LastSavedWhelpingMethod>
+  <Whelpings />
+  <RunningTotalCount>5</RunningTotalCount>
+  <RunningNumberOfTheCount>178</RunningNumberOfTheCount>
+  <RunningMaleCount>0</RunningMaleCount>
+  <RunningFemaleCount>0</RunningFemaleCount>
+  <LitterCounts>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>400721</SampoId>
+      </FemaleId>
+      <TotalCount>1</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706881</SampoId>
+      </FemaleId>
+      <TotalCount>2</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604429</SampoId>
+      </FemaleId>
+      <TotalCount>3</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604408</SampoId>
+      </FemaleId>
+      <TotalCount>4</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+    <LitterCount>
+      <FemaleId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604418</SampoId>
+      </FemaleId>
+      <TotalCount>5</TotalCount>
+      <NumberOfTheCount>178</NumberOfTheCount>
+      <MaleCount>0</MaleCount>
+      <FemaleCount>0</FemaleCount>
+    </LitterCount>
+  </LitterCounts>
+  <FurfixLinks />
+  <Groups />
+  <Syncronizations />
+  <LastSavedFirstPairingDate>0001-01-01T00:00:00</LastSavedFirstPairingDate>
+  <LastSavedSecondPairingDate>0001-01-01T00:00:00</LastSavedSecondPairingDate>
+  <LastSavedThirdPairingDate>0001-01-01T00:00:00</LastSavedThirdPairingDate>
+  <WizardLaps />
+  <ApplicationErrors />
+  <IsDeserializing>false</IsDeserializing>
+</Session>

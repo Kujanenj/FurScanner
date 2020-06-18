@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationVersion>2.4.6361.20159</ApplicationVersion>
+  <Number>14</Number>
+  <Created>2020-06-13T12:03:10-08:00</Created>
+  <Modified>2020-06-13T12:04:54-08:00</Modified>
+  <HasChanges>true</HasChanges>
+  <CurrentlyUsedGradingValues />
+  <GenderReset>true</GenderReset>
+  <CurrentGender>129</CurrentGender>
+  <CurrentLocation>
+    <HouseNumber>4</HouseNumber>
+    <CageNumber>11</CageNumber>
+    <IncrementDirection>Ascending</IncrementDirection>
+    <IncrementAmount>2</IncrementAmount>
+  </CurrentLocation>
+  <AnimalGradings />
+  <BreedingAnimals>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>400721</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>3</HouseNumber>
+        <CageNumber>1</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706881</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>3</HouseNumber>
+        <CageNumber>3</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604429</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>3</HouseNumber>
+        <CageNumber>5</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604408</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>3</HouseNumber>
+        <CageNumber>7</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>604418</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>3</HouseNumber>
+        <CageNumber>9</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706885</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>4</HouseNumber>
+        <CageNumber>1</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>706879</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>4</HouseNumber>
+        <CageNumber>3</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>705685</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>4</HouseNumber>
+        <CageNumber>5</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>803124</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>4</HouseNumber>
+        <CageNumber>7</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+    <BreedingAnimal>
+      <AnimalId>
+        <BirthFarm>5302</BirthFarm>
+        <SampoId>802004</SampoId>
+      </AnimalId>
+      <Gender>129</Gender>
+      <AnimalType xsi:type="NullAnimalType">
+        <Language>Unknown</Language>
+        <AnimalSpecies xsi:type="NullAnimalSpecies">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalSpecies>
+        <AnimalTypeGroup xsi:type="NullAnimalTypeGroup">
+          <Code>-1</Code>
+          <Abbreviation>-</Abbreviation>
+        </AnimalTypeGroup>
+        <Name>-</Name>
+        <Description>-</Description>
+      </AnimalType>
+      <Location>
+        <HouseNumber>4</HouseNumber>
+        <CageNumber>9</CageNumber>
+        <IncrementDirection>Ascending</IncrementDirection>
+        <IncrementAmount>2</IncrementAmount>
+      </Location>
+      <Gradings />
+    </BreedingAnimal>
+  </BreedingAnimals>
+  <LastSavedPairingDate>2020-06-13T00:00:00-08:00</LastSavedPairingDate>
+  <LastSavedPairingMethod>Pairing</LastSavedPairingMethod>
+  <Pairings />
+  <LastSavedWhelpingDate>2020-06-13T00:00:00-08:00</LastSavedWhelpingDate>
+  <LastSavedWhelpingMethod>Normal</LastSavedWhelpingMethod>
+  <Whelpings />
+  <RunningTotalCount>0</RunningTotalCount>
+  <RunningNumberOfTheCount>0</RunningNumberOfTheCount>
+  <RunningMaleCount>0</RunningMaleCount>
+  <RunningFemaleCount>0</RunningFemaleCount>
+  <LitterCounts />
+  <FurfixLinks />
+  <Groups />
+  <Syncronizations />
+  <LastSavedFirstPairingDate>0001-01-01T00:00:00</LastSavedFirstPairingDate>
+  <LastSavedSecondPairingDate>0001-01-01T00:00:00</LastSavedSecondPairingDate>
+  <LastSavedThirdPairingDate>0001-01-01T00:00:00</LastSavedThirdPairingDate>
+  <WizardLaps />
+  <ApplicationErrors />
+  <IsDeserializing>false</IsDeserializing>
+</Session>
