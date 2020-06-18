@@ -5,6 +5,11 @@ import android.os.Bundle
 
 
 typealias IdPair = Pair<String,String>
+enum class Modes( ) {
+    BREED,
+    NO_MODE
+}
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

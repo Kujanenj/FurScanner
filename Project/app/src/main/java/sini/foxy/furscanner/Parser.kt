@@ -2,12 +2,9 @@ package sini.foxy.furscanner
 
 
 
-enum class Modes( ) {
-    BREED,
-    NOMODE
-}
+
 class Parser(){
-    private var activeMode = Modes.NOMODE
+    private var activeMode = Modes.NO_MODE
 
 
     public fun setMode(newMode : Modes ) : Boolean{
