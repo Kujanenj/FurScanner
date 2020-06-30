@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">FurScanner</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+
+
+        <string name="app_info_top">
+                &lt;?xml version="1.0"?&gt;
+                &lt;Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+                        &lt;ApplicationVersion&gt;2.4.6361.20159&lt;/ApplicationVersion&gt;
+                        &lt;Number&gt;SESSION_NUMBER&lt;/Number&gt;
+                        &lt;Created&gt;DATE&lt;/Created&gt;
+                        &lt;Modified&gt;DATE&lt;/Modified&gt;
+                        &lt;HasChanges&gt;true&lt;/HasChanges&gt;
+                        &lt;CurrentlyUsedGradingValues /&gt;
+                        &lt;GenderReset&gt;true&lt;/GenderReset&gt;
+                        &lt;CurrentGender&gt;CURRENT_GENDER&lt;/CurrentGender&gt;
+                                CURRENT_LOC
+        </string>
+    <string name="app_info_bottom">
+          &lt;FurfixLinks /&gt;
+          &lt;Groups /&gt;
+          &lt;Syncronizations /&gt;
+          &lt;LastSavedFirstPairingDate&gt;PAIRING_DATE_FIRST&lt;/LastSavedFirstPairingDate&gt;
+          &lt;LastSavedSecondPairingDate&gt;PAIRING_DATE_SECOND&lt;/LastSavedSecondPairingDate&gt;
+          &lt;LastSavedThirdPairingDate&gt;PAIRING_DATE_THIRD&lt;/LastSavedThirdPairingDate&gt;
+          &lt;WizardLaps /&gt;
+          &lt;ApplicationErrors /&gt;
+          &lt;IsDeserializing&gt;false&lt;/IsDeserializing&gt;
+        &lt;/Session&gt;
+    </string>
+    <string name="current_location">
+              &lt;CurrentLocation&gt;
+                   HOUSE_CAGE_LOC
+                     INCREMENTATION
+              &lt;/CurrentLocation&gt;
+        </string>
+    <string name="location">
+            &lt;Location&gt;
+                   HOUSE_CAGE_LOC
+                  INCREMENTATION
+              &lt;/Location&gt;
+        </string>
+
+    <string name="house_cage_loc">
+                &lt;HouseNumber&gt;HOUSE_NUMBER&lt;/HouseNumber&gt;
+                &lt;CageNumber&gt;CAGE_NUMBER&lt;/CageNumber&gt;
+        </string>
+    <string name="incrementation">
+         &lt;IncrementDirection&gt;INC_DIRECTION&lt;/IncrementDirection&gt;
+         &lt;IncrementAmount&gt;INC_AMOUNT&lt;/IncrementAmount&gt;
+    </string>
+</resources>
