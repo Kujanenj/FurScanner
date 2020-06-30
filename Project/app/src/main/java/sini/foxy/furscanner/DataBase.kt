@@ -1,7 +1,7 @@
 package sini.foxy.furscanner
 
 class DataBase {
-  private lateinit var breedContainer : MutableList<IdPair> //List of ID's. e.g, 337820,5520 (FOX ID, FARM ID)
+  private lateinit var breedContainer : MutableList<IdPair> //List of ID's.
 
     public fun getContainer(containerType : String? ) : List<IdPair>
     {

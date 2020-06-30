@@ -19,7 +19,7 @@ class Parser(){
     /*
     NOTE: Add some safetyGuards, and the test all!
      */
-    public fun Parse(barcode : String) : IdPair {
+     fun parse(barcode : String) : IdPair {
        println("----Parse start---")
 
         if(barcode.length!=16){
