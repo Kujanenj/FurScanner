@@ -1,9 +1,11 @@
 package sini.foxy.furscanner
 
-class DataBase {
-  private lateinit var breedContainer : MutableList<IdPair> //List of ID's.
+import java.lang.Exception
 
-    public fun getContainer(containerType : String? ) : List<IdPair>
+class DataBase {
+  private  val breedContainer = mutableListOf<IdPair>()//List of ID's.
+
+     /* public fun getContainer(containerType : String? ) : List<IdPair>
     {
         return if(containerType=="breed"){
             breedContainer
@@ -11,13 +13,14 @@ class DataBase {
             emptyList()
         }
     }
-
-    public fun addAnimal(AnimalID : String, FarmID : String) : Boolean{
-        if(breedContainer.contains(Pair(AnimalID,FarmID))){
-            return false
-        }
-        breedContainer.add(Pair(AnimalID,FarmID))
-        return true
+*/
+        fun addAnimal(animalPair : IdPair) : Boolean{
+            if(breedContainer.contains(animalPair)){
+                throw Exception("Animal already contained in database!")
+            }
+            breedContainer.add(animalPair)
+            println("Added pair $animalPair")
+            return true
     }
 
 }

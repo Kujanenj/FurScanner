@@ -9,16 +9,19 @@ import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.CaptureManager
 import kotlinx.android.synthetic.main.activity_simple_scan.*
+import java.lang.Exception
 import java.util.*
 
 class SimpleScanActivity : AppCompatActivity() {
 
     lateinit var captureManager: CaptureManager
     var timeout : Boolean =false
-    val simpleParser = Parser()
+    val controller = Controller()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        controller.setMode(Modes.BREED) //BREED MODE ENGAGE
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_simple_scan)
 
@@ -38,8 +41,17 @@ class SimpleScanActivity : AppCompatActivity() {
                         simple_label.text="Trying to scan"
                         timeout=true
                         result?.let {
+                            println("Trying to handle results")
+                            try {
 
-                           simpleParser.parse(it.text)
+
+                           controller.handleBarcodeResult(it)
+                            println("Handeled")
+                            }
+                            catch (error : Exception){
+                                println(error)
+                                return
+                            }
                         }
                         //Create a timer object so same barcode cant be scanned multiple times really fast, default delay is 5 s
                         Timer().schedule(object : TimerTask(){
@@ -63,26 +75,26 @@ class SimpleScanActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         captureManager.onPause()
-        println("PAUSEEE")
+        println("ON PAUSE")
     }
 
     override fun onResume() {
         super.onResume()
         captureManager.onResume()
-        println("RESUMEEE")
+        println("ON RESUME")
     }
 
     override fun onDestroy() {
         super.onDestroy()
         captureManager.onDestroy()
-        println("DESTROY!")
-        println("-----a----------------------------------")
+        println("ON DESTROY!")
+
 
     }
 
     override fun onStop() {
         super.onStop()
-        println("STOP")
+        println("ON STOP")
 
     }
 }

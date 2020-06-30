@@ -27,19 +27,19 @@ class Parser(){
         }
 
 
-        var houseIDSubstring = barcode.substring(0,7)
+        var farmIDSubstring = barcode.substring(0,7)
         var foxIDSubstring = barcode.substring(7,16)
         var indexToRemove = 0
 
 
-        for (i in 0..houseIDSubstring.length){
-            if(houseIDSubstring[i]!='0'){
+        for (i in 0..farmIDSubstring.length){
+            if(farmIDSubstring[i]!='0'){
                 break
             }
             indexToRemove++
         }
 
-        houseIDSubstring=houseIDSubstring.drop(indexToRemove)
+        farmIDSubstring=farmIDSubstring.drop(indexToRemove)
 
         indexToRemove=0
         for (i in 0..foxIDSubstring.length){
@@ -55,7 +55,7 @@ class Parser(){
 
 
         println("---Parse complete----")
-        return IdPair(houseIDSubstring,foxIDSubstring)
+        return IdPair(foxIDSubstring,farmIDSubstring)
 
     }
 
