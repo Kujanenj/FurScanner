@@ -9,8 +9,8 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 
 
-typealias IdPair = Pair<String,String>
-val EmptyIDPair = IdPair("Empty","Empty")
+
+
 enum class Modes( ) {
     BREED,
     NO_MODE
