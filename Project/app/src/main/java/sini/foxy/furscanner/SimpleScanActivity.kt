@@ -9,6 +9,7 @@ import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.CaptureManager
 import kotlinx.android.synthetic.main.activity_simple_scan.*
+import java.io.FileWriter
 import java.lang.Exception
 import java.util.*
 
@@ -21,6 +22,15 @@ class SimpleScanActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         controller.setMode(Modes.BREED) //BREED MODE ENGAGE
+
+
+        println("_______________________________")
+        val testWriter : FileWriterInterface = FileWriterConcrete()
+        var testFORMER = XMLStringFormer(applicationContext)
+        println(testFORMER.formXMLFile())
+        
+        println("_______________________________")
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_simple_scan)

@@ -34,12 +34,12 @@
     <string name="current_location">
               &lt;CurrentLocation&gt;
                    HOUSE_CAGE_LOC
-                     INCREMENTATION
+                   INCREMENTATION
               &lt;/CurrentLocation&gt;
         </string>
     <string name="location">
             &lt;Location&gt;
-                   HOUSE_CAGE_LOC
+                  HOUSE_CAGE_LOC
                   INCREMENTATION
               &lt;/Location&gt;
         </string>

@@ -11,16 +11,14 @@ import com.google.zxing.integration.android.IntentResult
 
 
 
-enum class Modes( ) {
-    BREED,
-    NO_MODE
-}
+//TODO : replace all test stuff with actual implementations
 //DESKTOP-06IBLMI
 class MainActivity : AppCompatActivity() {
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         var testParser = Parser()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
