@@ -27,8 +27,14 @@ class SimpleScanActivity : AppCompatActivity() {
         println("_______________________________")
         val testWriter : FileWriterInterface = FileWriterConcrete()
         var testFORMER = XMLStringFormer(applicationContext)
-        println(testFORMER.formXMLFile())
-        
+
+        try {
+        testWriter.writeFile("/data/data/sini.foxy.furscanner/cache/testfile.txt",testFORMER.formXMLFile())
+        }
+        catch (error : Exception){
+            println(error)
+        }
+
         println("_______________________________")
 
 

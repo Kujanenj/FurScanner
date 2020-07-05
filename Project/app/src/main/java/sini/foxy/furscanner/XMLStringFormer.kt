@@ -13,11 +13,12 @@ class XMLStringFormer(context: Context) {
     }
     private fun formHeaderXML() : String {
         var header = context.getString(R.string.app_info_top)
-        header = header.replace("SESSION_NUMBER",generalData.SessionNumber.toString())
-        header = header.replace("DATE",generalData.Date.toString())
+        header = header.replace("SESSION_NUMBER",generalData.SessionNumber.data)
+        header = header.replace("DATE",generalData.Date.data)
         //TODO : replace currentGender
-        header.replace("CURRENT_LOC",formLocationXML(true))
-
+        header = header.replace("CURRENT_LOC",formLocationXML(true))
+        println("Header-->")
+        println(header)
         return header
 
     }
@@ -26,7 +27,7 @@ class XMLStringFormer(context: Context) {
             return ""
     }
     private fun formLocationXML(isCurrentLocation : Boolean) : String {
-        var location = context.getString(R.string.current_location)
+        var location = context.getString(R.string.location)
         if(isCurrentLocation){
             location= location.replace("Location","CurrentLocation")
         }
@@ -42,19 +43,19 @@ class XMLStringFormer(context: Context) {
 
         var cageLoc = context.getString(R.string.house_cage_loc)
 
-        cageLoc = cageLoc.replace("HOUSE_NUMBER",Location.HouseNumber.toString())
+        cageLoc = cageLoc.replace("HOUSE_NUMBER",Location.HouseNumber.data)
 
-        cageLoc = cageLoc.replace("CAGE_NUMBER",Location.CageNumber.toString())
+        cageLoc = cageLoc.replace("CAGE_NUMBER",Location.CageNumber.data)
 
 
-        println(cageLoc)
         return cageLoc
     }
 
     private fun formIncrementationXML(): String {
        var incString : String = context.getString(R.string.incrementation)
-        incString = incString.replaceFirst("INC_DIRECTION",Incrementation.Direction.toString())
-        incString = incString.replaceFirst("INC_AMOUNT",Incrementation.Amount.toString())
+        incString = incString.replaceFirst("INC_DIRECTION",Incrementation.Direction.data)
+        incString = incString.replaceFirst("INC_AMOUNT",Incrementation.Amount.data)
+
         return incString
     }
 

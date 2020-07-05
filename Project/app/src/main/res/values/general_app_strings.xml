@@ -17,7 +17,7 @@
                         &lt;CurrentlyUsedGradingValues /&gt;
                         &lt;GenderReset&gt;true&lt;/GenderReset&gt;
                         &lt;CurrentGender&gt;CURRENT_GENDER&lt;/CurrentGender&gt;
-                                CURRENT_LOC
+                        CURRENT_LOC
         </string>
     <string name="app_info_bottom">
           &lt;FurfixLinks /&gt;
