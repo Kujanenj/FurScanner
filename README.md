@@ -1,6 +1,10 @@
 # FurScanner
 Android app for scanning fur animal barcodes. 
 
-# This is where the magic happens
-DevBranch will be where 99% of the work will happen
-
+# TODO
+* FileWriting for breedmode
+* UI
+* Testing
+* Release v 0.1 here
+* Other modes
+* External Device
