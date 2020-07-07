@@ -7,17 +7,16 @@
 
 
         <string name="app_info_top">
-                &lt;?xml version="1.0"?&gt;
-                &lt;Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-                        &lt;ApplicationVersion&gt;2.4.6361.20159&lt;/ApplicationVersion&gt;
-                        &lt;Number&gt;SESSION_NUMBER&lt;/Number&gt;
-                        &lt;Created&gt;DATE&lt;/Created&gt;
-                        &lt;Modified&gt;DATE&lt;/Modified&gt;
-                        &lt;HasChanges&gt;true&lt;/HasChanges&gt;
-                        &lt;CurrentlyUsedGradingValues /&gt;
-                        &lt;GenderReset&gt;true&lt;/GenderReset&gt;
-                        &lt;CurrentGender&gt;CURRENT_GENDER&lt;/CurrentGender&gt;
-                        CURRENT_LOC
+            &lt;?xml version="1.0"?&gt;\n&lt;Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;\n
+                \u0020&lt;ApplicationVersion&gt;2.4.6361.20159&lt;/ApplicationVersion&gt;\n
+                \u0020&lt;Number&gt;%1$s&lt;/Number&gt;\n
+                \u0020&lt;Created&gt;%2$s&lt;/Created&gt;\n
+                \u0020&lt;Modified&gt;%2$s&lt;/Modified&gt;\n
+                \u0020&lt;HasChanges&gt;true&lt;/HasChanges&gt;\n
+                \u0020&lt;CurrentlyUsedGradingValues /&gt;\n
+                \u0020&lt;GenderReset&gt;true&lt;/GenderReset&gt;\n
+                \u0020&lt;CurrentGender&gt;CURRENT_GENDER&lt;/CurrentGender&gt;\n
+                \u0020%3$s <!-- CurrentLocation -->
         </string>
     <string name="app_info_bottom">
           &lt;FurfixLinks /&gt;
@@ -31,25 +30,20 @@
           &lt;IsDeserializing&gt;false&lt;/IsDeserializing&gt;
         &lt;/Session&gt;
     </string>
-    <string name="current_location">
-              &lt;CurrentLocation&gt;
-                   HOUSE_CAGE_LOC
-                   INCREMENTATION
-              &lt;/CurrentLocation&gt;
-        </string>
+
     <string name="location">
-            &lt;Location&gt;
-                  HOUSE_CAGE_LOC
-                  INCREMENTATION
-              &lt;/Location&gt;
+            &lt;Location&gt;\n
+                \u0020%1$s\n <!-- houseCageloc -->
+                 \u0020%2$s\n <!-- incrementation -->
+                 \u0020&lt;/Location&gt;
         </string>
 
     <string name="house_cage_loc">
-                &lt;HouseNumber&gt;HOUSE_NUMBER&lt;/HouseNumber&gt;
-                &lt;CageNumber&gt;CAGE_NUMBER&lt;/CageNumber&gt;
+                \u0020\u0020&lt;HouseNumber&gt;%1$s&lt;/HouseNumber&gt;\n
+                \u0020\u0020\u0020&lt;CageNumber&gt;%2$s&lt;/CageNumber&gt;
         </string>
     <string name="incrementation">
-         &lt;IncrementDirection&gt;INC_DIRECTION&lt;/IncrementDirection&gt;
-         &lt;IncrementAmount&gt;INC_AMOUNT&lt;/IncrementAmount&gt;
+         \u0020\u0020&lt;IncrementDirection&gt;%1$s&lt;/IncrementDirection&gt;\n
+         \u0020\u0020\u0020&lt;IncrementAmount&gt;%2$s&lt;/IncrementAmount&gt;
     </string>
 </resources>
