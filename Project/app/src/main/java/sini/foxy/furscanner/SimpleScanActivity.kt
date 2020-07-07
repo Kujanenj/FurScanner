@@ -17,25 +17,13 @@ class SimpleScanActivity : AppCompatActivity() {
 
     lateinit var captureManager: CaptureManager
     var timeout : Boolean =false
-    val controller = Controller()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val controller = Controller(applicationContext)
         controller.setMode(Modes.BREED) //BREED MODE ENGAGE
-
-
-        println("_______________________________")
-        val testWriter : FileWriterInterface = FileWriterConcrete()
-        var testFORMER = XMLStringFormer(applicationContext)
-
-        try {
-        testWriter.writeFile("/data/data/sini.foxy.furscanner/cache/testfile.txt",testFORMER.formXMLFile())
-        }
-        catch (error : Exception){
-            println(error)
-        }
-
-        println("_______________________________")
+        controller.handleCompleteButton()
 
 
         super.onCreate(savedInstanceState)

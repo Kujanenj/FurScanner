@@ -1,13 +1,19 @@
 package sini.foxy.furscanner
 
+import android.content.Context
 import com.journeyapps.barcodescanner.BarcodeResult
 import java.lang.Exception
 
 
-class Controller {
-    var currentMode : Modes = Modes.NO_MODE
+class Controller(private val testContext: Context) {
+
+
+    private var currentMode : Modes = Modes.NO_MODE
     private val dataBase = DataBase()
-    val parser =  Parser()
+    private val parser =  Parser()
+    private val testWriter : FileWriterInterface = FileWriterConcrete()
+    private var testFORMER = XMLStringFormer(testContext)
+
 
     public fun setMode(newMode : Modes ) : Boolean{
 
@@ -35,6 +41,15 @@ class Controller {
         }
             else -> throw Exception("Illegal mode")
 
+    }
+
+    }
+    fun handleCompleteButton(){
+    try {
+        testWriter.writeFile("/data/data/sini.foxy.furscanner/cache/testfile.txt",testFORMER.formXMLFile(dataBase.getXMLDataMap()))
+    }
+    catch (error : Exception){
+        println(error)
     }
 
     }

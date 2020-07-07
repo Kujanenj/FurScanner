@@ -4,18 +4,18 @@ import android.content.Context
 
 class XMLStringFormer(context: Context) {
      val context : Context = context
+    lateinit var xmlDataCopy: Map<String, String>
 
-
-    fun formXMLFile() : String {
-
+    fun formXMLFile(xmlData : Map<String,String>) : String {
+    xmlDataCopy = xmlData
     return formHeaderXML()
 
     }
     //TODO : replace currentGender
     private fun formHeaderXML() : String {
         val header = context.getString(R.string.app_info_top,
-            generalData.SessionNumber.data,
-            generalData.Date.data,
+            xmlDataCopy["SESSION_NUMBER"],
+            xmlDataCopy["DATE"],
             formLocationXML(true))
         println("Header-->")
         println(header)
@@ -23,8 +23,13 @@ class XMLStringFormer(context: Context) {
 
     }
 
-    private fun formBreedXML () : String{
-            return ""
+    private fun formBreedXML (listOfAnimals : List<IdPair>) : String{
+        var breedingAnimalStringSingle =""
+            for (pair in listOfAnimals){
+                breedingAnimalStringSingle+=context.getString(R.string.breeding_animal_single,pair.second,pair.first)
+            }
+        return context.getString(R.string.breeding_animals,breedingAnimalStringSingle)
+
     }
     private fun formLocationXML(isCurrentLocation : Boolean) : String {
         var location = context.getString(R.string.location,
@@ -37,10 +42,10 @@ class XMLStringFormer(context: Context) {
     }
 
     private fun formCageHouseXML() = context.getString(R.string.house_cage_loc,
-        Location.HouseNumber.data,
-        Location.CageNumber.data)
+        xmlDataCopy["HOUSE_NUMBER"],
+        xmlDataCopy["CAGE_NUMBER"])
     private fun formIncrementationXML() = context.getString(R.string.incrementation,
-        Incrementation.Direction.data,
-        Incrementation.Amount.data)
+            xmlDataCopy["DIRECTION"],
+            xmlDataCopy["AMOUNT"])
     }
 

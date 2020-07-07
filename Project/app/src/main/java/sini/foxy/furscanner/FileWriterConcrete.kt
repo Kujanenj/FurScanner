@@ -15,7 +15,7 @@ class FileWriterConcrete : FileWriterInterface{
         initFile(filePath)
         wFile.writeText(contents)
         println("Wrote some stuff")
-        throw Exception("Go fuck")
+
     }
     private fun initFile(filePath: String?){
         if(filePath==null){

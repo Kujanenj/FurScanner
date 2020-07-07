@@ -3,9 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    
 
 
+    <!-- TODO: Manually adding \u0020 is not the best way to do this. Look for better ways to format -->
         <string name="app_info_top">
             &lt;?xml version="1.0"?&gt;\n&lt;Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;\n
                 \u0020&lt;ApplicationVersion&gt;2.4.6361.20159&lt;/ApplicationVersion&gt;\n

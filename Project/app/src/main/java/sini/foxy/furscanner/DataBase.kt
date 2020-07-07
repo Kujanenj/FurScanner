@@ -3,7 +3,18 @@ package sini.foxy.furscanner
 import java.lang.Exception
 
 class DataBase {
-  private  val breedContainer = mutableListOf<IdPair>()//List of ID's.
+
+
+    private var xmlDataMap = mutableMapOf<String,String>(
+        "SESSION_NUMBER" to "EMPTY_SESSION",
+        "DATE" to "EMPTY_DATE",
+        "HOUSE_NUMBER" to "EMPTY",
+        "CAGE_NUMBER" to "EMPTY",
+        "DIRECTION" to "ASC",
+        "INC_AMOUNT" to "2"
+    )
+
+    private  val breedContainer = mutableListOf<IdPair>(IdPair("604418","5302"),IdPair("604408","5302"))//List of ID's.
 
      /* public fun getContainer(containerType : String? ) : List<IdPair>
     {
@@ -22,5 +33,6 @@ class DataBase {
             println("Added pair $animalPair")
             return true
     }
+    fun getXMLDataMap() = xmlDataMap
 
 }

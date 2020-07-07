@@ -4,8 +4,8 @@
         <string name="breeding_animal_single">
         &lt;BreedingAnimal&gt;
                 &lt;AnimalId&gt;
-                        &lt;BirthFarm&gt;FARM_ID&lt;/BirthFarm&gt;
-                        &lt;SampoId&gt;FUR_ID&lt;/SampoId&gt;
+                        &lt;BirthFarm&gt;%1$s&lt;/BirthFarm&gt;
+                        &lt;SampoId&gt;%2$s&lt;/SampoId&gt;
                 &lt;/AnimalId&gt;
                 &lt;Gender&gt;GENDER_NUMBER&lt;/Gender&gt;
                 &lt;AnimalType xsi:type="NullAnimalType"&gt;
@@ -22,16 +22,17 @@
                         &lt;Description&gt;-&lt;/Description&gt;
                 &lt;/AnimalType&gt;
                 &lt;Location&gt;
-                        HOUSE_CAGE_LOC
-                        INCREMENTION
+                        %1$s
+                        %2$s
                 &lt;/Location&gt;
                 &lt;Gradings /&gt;
         &lt;/BreedingAnimal&gt;
+
     </string>
     <string name="breeding_animals">
              &lt;AnimalGradings /&gt;
                         &lt;BreedingAnimals&gt;
-                                BREEDING_ANIMALS
+                               %1$s
                         &lt;/BreedingAnimals&gt;
     </string>
 
