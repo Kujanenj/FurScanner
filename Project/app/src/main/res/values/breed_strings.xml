@@ -21,10 +21,7 @@
                         &lt;Name&gt;-&lt;/Name&gt;
                         &lt;Description&gt;-&lt;/Description&gt;
                 &lt;/AnimalType&gt;
-                &lt;Location&gt;
-                        %1$s
-                        %2$s
-                &lt;/Location&gt;
+                 %3$s <!--LOCATION -->
                 &lt;Gradings /&gt;
         &lt;/BreedingAnimal&gt;
 
