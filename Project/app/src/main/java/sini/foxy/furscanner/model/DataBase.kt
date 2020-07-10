@@ -1,4 +1,6 @@
-package sini.foxy.furscanner
+package sini.foxy.furscanner.model
+
+import sini.foxy.furscanner.IdPair
 
 class DataBase {
 
@@ -10,7 +12,10 @@ class DataBase {
         "DIRECTION" to "ASC",
         "INC_AMOUNT" to "2"
     )
-    private  val breedContainer = mutableListOf<IdPair>(IdPair("604418","5302"),IdPair("604408","5302"))//List of ID's.
+    private  val breedContainer = mutableListOf<IdPair>(
+        IdPair("604418", "5302"),
+        IdPair("604408", "5302")
+    )//List of ID's.
 
     fun addBreedAnimal(animalPair : IdPair) : Boolean {
         if(breedContainer.contains(animalPair)){

@@ -1,9 +1,9 @@
-package sini.foxy.furscanner
+package sini.foxy.furscanner.model
 
 import java.io.File
 import java.lang.Exception
 
-class FileWriterConcrete : FileWriterInterface{
+class FileWriterConcrete : FileWriterInterface {
     lateinit var wFile : File
     override fun appendFile(filePath: String?, contents: String) {
         initFile(filePath)

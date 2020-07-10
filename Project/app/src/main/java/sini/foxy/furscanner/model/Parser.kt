@@ -1,5 +1,6 @@
-package sini.foxy.furscanner
+package sini.foxy.furscanner.model
 
+import sini.foxy.furscanner.IdPair
 import java.lang.Exception
 
 
@@ -55,7 +56,7 @@ class Parser(){
 
 
         println("---Parse complete----")
-        return IdPair(foxIDSubstring,farmIDSubstring)
+        return IdPair(foxIDSubstring, farmIDSubstring)
 
     }
 

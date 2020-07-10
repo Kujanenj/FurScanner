@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--TODO: Delete this file -->
 <resources>
 
         <string name="breeding_animal_single">
-        &lt;BreedingAnimal&gt;
-                &lt;AnimalId&gt;
-                        &lt;BirthFarm&gt;%1$s&lt;/BirthFarm&gt;
-                        &lt;SampoId&gt;%2$s&lt;/SampoId&gt;
-                &lt;/AnimalId&gt;
-                &lt;Gender&gt;GENDER_NUMBER&lt;/Gender&gt;
-                &lt;AnimalType xsi:type="NullAnimalType"&gt;
-                        &lt;Language&gt;Unknown&lt;/Language&gt;
-                        &lt;AnimalSpecies xsi:type="NullAnimalSpecies"&gt;
-                                &lt;Code&gt;-1&lt;/Code&gt;
-                                &lt;Abbreviation&gt;-&lt;/Abbreviation&gt;
-                        &lt;/AnimalSpecies&gt;
-                        &lt;AnimalTypeGroup xsi:type="NullAnimalTypeGroup"&gt;
-                                &lt;Code&gt;-1&lt;/Code&gt;
-                                &lt;Abbreviation&gt;-&lt;/Abbreviation&gt;
-                        &lt;/AnimalTypeGroup&gt;
-                        &lt;Name&gt;-&lt;/Name&gt;
-                        &lt;Description&gt;-&lt;/Description&gt;
-                &lt;/AnimalType&gt;
+        &lt;BreedingAnimal&gt; \n
+                &lt;AnimalId&gt; \n
+                        &lt;BirthFarm&gt;%1$s&lt;/BirthFarm&gt; \n
+                        &lt;SampoId&gt;%2$s&lt;/SampoId&gt; \n
+                &lt;/AnimalId&gt; \n
+                &lt;Gender&gt;GENDER_NUMBER&lt;/Gender&gt; \n
+                &lt;AnimalType xsi:type="NullAnimalType"&gt; \n
+                        &lt;Language&gt;Unknown&lt;/Language&gt; \n
+                        &lt;AnimalSpecies xsi:type="NullAnimalSpecies"&gt; \n
+                                &lt;Code&gt;-1&lt;/Code&gt; \n
+                                &lt;Abbreviation&gt;-&lt;/Abbreviation&gt; \n
+                        &lt;/AnimalSpecies&gt; \n
+                        &lt;AnimalTypeGroup xsi:type="NullAnimalTypeGroup"&gt; \n
+                                &lt;Code&gt;-1&lt;/Code&gt; \n
+                                &lt;Abbreviation&gt;-&lt;/Abbreviation&gt; \n
+                        &lt;/AnimalTypeGroup&gt; \n
+                        &lt;Name&gt;-&lt;/Name&gt; \n
+                        &lt;Description&gt;-&lt;/Description&gt; \n
+                &lt;/AnimalType&gt; \n
                  %3$s <!--LOCATION -->
-                &lt;Gradings /&gt;
+                &lt;Gradings /&gt; \n
         &lt;/BreedingAnimal&gt;
 
     </string>
     <string name="breeding_animals">
-             &lt;AnimalGradings /&gt;
-                        &lt;BreedingAnimals&gt;
+             &lt;AnimalGradings /&gt; \n
+                        &lt;BreedingAnimals&gt; \n
                                %1$s
                         &lt;/BreedingAnimals&gt;
     </string>

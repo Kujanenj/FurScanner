@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 
 
-import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.integration.android.IntentResult
-
-
+import sini.foxy.furscanner.model.Parser
 
 
 //TODO : replace all test stuff with actual implementations

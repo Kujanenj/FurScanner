@@ -1,6 +1,7 @@
-package sini.foxy.furscanner
+package sini.foxy.furscanner.model
 
-import java.lang.Exception
+import sini.foxy.furscanner.IdPair
+import sini.foxy.furscanner.Modes
 
 class DataBaseManager {
 

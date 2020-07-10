@@ -1,20 +1,30 @@
-package sini.foxy.furscanner
+package sini.foxy.furscanner.Controller
 
 import android.content.Context
 import com.journeyapps.barcodescanner.BarcodeResult
+import sini.foxy.furscanner.Modes
+import sini.foxy.furscanner.XML.XMLStringFormer
+import sini.foxy.furscanner.model.DataBaseManager
+import sini.foxy.furscanner.model.FileWriterConcrete
+import sini.foxy.furscanner.model.FileWriterInterface
+import sini.foxy.furscanner.model.Parser
 import java.lang.Exception
 
 
 class Controller(private val testContext: Context) {
 
 
-    private var currentMode : Modes = Modes.NO_MODE
+    private var currentMode : Modes =
+        Modes.NO_MODE
     private val dataBaseManager = DataBaseManager()
-    private val parser =  Parser()
-    private var testFORMER = XMLStringFormer(testContext)
+    private val parser = Parser()
+    private val testWriter : FileWriterInterface =
+        FileWriterConcrete()
+    private var testFORMER =
+        XMLStringFormer(testContext)
 
 
-     fun setMode(newMode : Modes ) : Boolean{
+     fun setMode(newMode : Modes) : Boolean{
 
         try {
         currentMode =  newMode
@@ -45,9 +55,8 @@ class Controller(private val testContext: Context) {
     }
     fun handleCompleteButton(){
     try {
-       // testWriter.writeFile("/data/data/sini.foxy.furscanner/cache/testfile.txt",testFORMER.formXMLFile(dataBase.getXMLDataMap(),
-         //   dataBase.getContainer("")))
-        println(testFORMER.formXMLFile(dataBaseManager.getDataBase()))
+       //testWriter.writeFile("/data/data/sini.foxy.furscanner/cache/testfile.txt",testFORMER.createTest())
+        println(testFORMER.createTest())
     }
     catch (error : Exception){
         println(error)

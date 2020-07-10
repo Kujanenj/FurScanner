@@ -1,4 +1,4 @@
-package sini.foxy.furscanner
+package sini.foxy.furscanner.model
 
 interface FileWriterInterface {
 
