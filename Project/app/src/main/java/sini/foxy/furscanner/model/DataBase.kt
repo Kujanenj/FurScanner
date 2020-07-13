@@ -16,14 +16,14 @@ class DataBase {
     )
     private  val breedContainer = mutableMapOf<String, BreedingAnimal>()//List of breeding animals
 
-    fun addBreedAnimal(animalToAdd: BreedingAnimal) : Boolean { //TODO: Increase asymtotic speed? from n to log n
+    fun addBreedAnimal(animalToAdd: BreedingAnimal)  { //TODO: Increase asymtotic speed? from n to log n
         if(breedContainer.contains(animalToAdd.sampoId)){
             throw Exception("Animal already contained in database!")
         }
 
         breedContainer[animalToAdd.sampoId]=animalToAdd
         println("Added breeding animal, " + animalToAdd.sampoId)
-        return true
+
     }
     fun getXMLDataMap() = xmlDataMap
     fun getBreedContainer() = breedContainer

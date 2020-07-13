@@ -4,6 +4,7 @@ package sini.foxy.furscanner.model
 import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.animals.AnimalInterface
 import sini.foxy.furscanner.animals.BreedingAnimal
+import java.lang.Exception
 
 class DataBaseManager {
 
@@ -15,14 +16,18 @@ class DataBaseManager {
     }
 
     //Todo: Add a way to delete animals?
-    fun modifyDataBase(animal : AnimalInterface, mode : Modes) : Boolean{
+    fun modifyDataBase(animal : AnimalInterface, mode : Modes){
 
         when(mode){
+            Modes.BREED -> try {
+                database.addBreedAnimal(animal as BreedingAnimal)} //TODO: casting might not be safe for all types
+            catch (error : Exception){
+                println(error)
+            }
 
-            Modes.BREED -> database.addBreedAnimal(animal as BreedingAnimal) //TODO: casting might not be safe for all types
         }
 
-        return true
+
  }
 
 
