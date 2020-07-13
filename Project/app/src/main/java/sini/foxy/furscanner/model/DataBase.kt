@@ -1,6 +1,8 @@
 package sini.foxy.furscanner.model
 
 import sini.foxy.furscanner.IdPair
+import sini.foxy.furscanner.Location
+import sini.foxy.furscanner.animals.BreedingAnimal
 
 class DataBase {
 
@@ -12,19 +14,20 @@ class DataBase {
         "DIRECTION" to "ASC",
         "INC_AMOUNT" to "2"
     )
-    private  val breedContainer = mutableListOf<IdPair>(
-        IdPair("604418", "5302"),
-        IdPair("604408", "5302")
-    )//List of ID's.
+    private  val breedContainer = mutableMapOf<String, BreedingAnimal>()//List of breeding animals
 
-    fun addBreedAnimal(animalPair : IdPair) : Boolean {
-        if(breedContainer.contains(animalPair)){
+    fun addBreedAnimal(animalToAdd: BreedingAnimal) : Boolean { //TODO: Increase asymtotic speed? from n to log n
+        if(breedContainer.contains(animalToAdd.sampoId)){
             throw Exception("Animal already contained in database!")
         }
-        breedContainer.add(animalPair)
-        println("Added pair $animalPair")
+
+        breedContainer[animalToAdd.sampoId]=animalToAdd
+        println("Added breeding animal, " + animalToAdd.sampoId)
         return true
     }
     fun getXMLDataMap() = xmlDataMap
     fun getBreedContainer() = breedContainer
 }
+
+
+

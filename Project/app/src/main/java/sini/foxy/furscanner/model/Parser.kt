@@ -5,20 +5,8 @@ import java.lang.Exception
 
 
 class Parser(){
-   /* private var activeMode = Modes.NO_MODE
-
-
-    public fun setMode(newMode : Modes ) : Boolean{
-
-        activeMode =  newMode
-
-        return true
-    }
-
-    */
-
-    /*
-    NOTE: Add some safetyGuards, and the test all!
+    /* TODO: Add some safetyGuards, and the test all!
+    Also, make parser better.
      */
      fun parse(barcode : String) : IdPair {
        println("----Parse start---")

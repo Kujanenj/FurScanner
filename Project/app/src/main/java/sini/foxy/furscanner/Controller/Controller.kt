@@ -2,8 +2,11 @@ package sini.foxy.furscanner.Controller
 
 import android.content.Context
 import com.journeyapps.barcodescanner.BarcodeResult
+import sini.foxy.furscanner.Location
 import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.XML.XMLStringFormer
+import sini.foxy.furscanner.animals.AnimalFactory
+import sini.foxy.furscanner.animals.AnimalInterface
 import sini.foxy.furscanner.model.DataBaseManager
 import sini.foxy.furscanner.model.FileWriterConcrete
 import sini.foxy.furscanner.model.FileWriterInterface
@@ -42,7 +45,11 @@ class Controller(private val testContext: Context) {
             Modes.NO_MODE -> throw Exception("No mode was selected!")
             Modes.BREED ->{
             try {
-                dataBaseManager.modifyDataBase(parser.parse(scanResult.toString()),currentMode)
+                dataBaseManager.modifyDataBase(
+                    AnimalFactory.createAnimal(
+                    currentMode,parser.parse(scanResult.toString()),
+                    Location("",",",",","")
+                ),currentMode)
             }
             catch (error : Exception){
                 println(error)
@@ -56,7 +63,7 @@ class Controller(private val testContext: Context) {
     fun handleCompleteButton(){
     try {
        //testWriter.writeFile("/data/data/sini.foxy.furscanner/cache/testfile.txt",testFORMER.createTest())
-        println(testFORMER.createTest())
+
     }
     catch (error : Exception){
         println(error)

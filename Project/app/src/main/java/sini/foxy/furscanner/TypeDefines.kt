@@ -7,7 +7,11 @@ enum class Modes {
     BREED,
     NO_MODE
     }
-enum class indentations (val amount : Int){
-    HEADER(1)
+class Location(houseP : String, cageP : String, incDirP : String, incAmountP : String){
+    var house = houseP
+    var cage = cageP
+    var incDir = incDirP
+    var incAmount = incAmountP
+
 }
 val EmptyIDPair = IdPair("Empty","Empty")
