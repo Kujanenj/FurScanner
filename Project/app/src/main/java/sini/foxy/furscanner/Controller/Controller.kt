@@ -45,11 +45,7 @@ class Controller(private val testContext: Context) {
             Modes.NO_MODE -> throw Exception("No mode was selected!")
             Modes.BREED ->{
             try {
-                dataBaseManager.modifyDataBase(
-                    AnimalFactory.createAnimal(
-                    currentMode,parser.parse(scanResult.toString()),
-                    Location("",",",",","")
-                ),currentMode)
+               //TODO: handle breedEvent
             }
             catch (error : Exception){
                 println(error)

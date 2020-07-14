@@ -10,7 +10,7 @@ import sini.foxy.furscanner.Modes
 class AnimalFactoryTests {
     @Test
     fun testCreateAnimal(){
-        val testLocation = Location("1","2","ASC","2")
+        val testLocation = Location(0,0,"ASC",0)
         val testID = IdPair("604418","5302")
         val testAnimal = AnimalFactory.createAnimal(Modes.BREED,testID,testLocation
         )

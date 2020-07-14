@@ -18,11 +18,11 @@ class DataBase {
 
     fun addBreedAnimal(animalToAdd: BreedingAnimal)  { //TODO: Increase asymtotic speed? from n to log n
         if(breedContainer.contains(animalToAdd.sampoId)){
-            throw Exception("Animal already contained in database!")
+            throw Exception("Animal: "+ animalToAdd.sampoId + " already contained in database!")
         }
 
         breedContainer[animalToAdd.sampoId]=animalToAdd
-        println("Added breeding animal, " + animalToAdd.sampoId)
+        println("Added breeding animal, " + animalToAdd.getIDPair() + ", \n with location of : " + animalToAdd.getLocation().getLocationData())
 
     }
     fun getXMLDataMap() = xmlDataMap

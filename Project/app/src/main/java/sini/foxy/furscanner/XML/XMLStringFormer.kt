@@ -7,7 +7,7 @@ import sini.foxy.furscanner.model.DataBase
 
 class XMLStringFormer(context: Context) {
 
-    fun createTest(dataBase: DataBase) : String{
+    fun makeXML(dataBase: DataBase) : String{
 
        val generalData = dataBase.getXMLDataMap()
 
