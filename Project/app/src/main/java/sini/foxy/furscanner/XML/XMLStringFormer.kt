@@ -1,20 +1,22 @@
 package sini.foxy.furscanner.XML
 
-import android.content.Context
+
 import org.redundent.kotlin.xml.PrintOptions
 import org.redundent.kotlin.xml.xml
 import sini.foxy.furscanner.model.DataBase
 
-class XMLStringFormer(context: Context) {
+class XMLStringFormer() {
 
     fun makeXML(dataBase: DataBase) : String{
-
+        println("Forming XML string")
+        println(dataBase.getBreedContainer().size)
        val generalData = dataBase.getXMLDataMap()
 
         val AppInfoTop = xml("Session"){
-            xmlns = "http://www.w3.org/2001/XMLSchema-instance xmlns:xsd=http://www.w3.org/2001/XMLSchema" //TODO: This is wrong
+            xmlns = "http://www.w3.org/2001/XMLSchema-instance xmlns:xsd=http://www.w3" +
+                    ".org/2001/XMLSchema" //TODO: This is wrong
             "ApplicationVersion"{
-                -generalData[""]!!
+                -""
             }
             "Number"{
                 -generalData["SESSION_NUMBER"]!!
@@ -50,14 +52,14 @@ class XMLStringFormer(context: Context) {
                     "BreedingAnimal"{
                         "AnimalID"{
                             "BirthFarm"{
-                                animal.birthFarm
+                                -animal.birthFarm
                             }
                             "SampoID"{
-                                animal.sampoId
+                                -animal.sampoId
                             }
                         }
                         "Gender"{
-
+                            -""
                         }
                         //"<AnimalType xsi:type=\"NullAnimalType\">"{ TODO: check formatting online
                         //}
@@ -66,36 +68,36 @@ class XMLStringFormer(context: Context) {
                         }
                         //TODO: Add animal species
                         "Code"{
-
+                            -""
                         }
                         "Abbreviation"{
 
                         }
                         //TODO: add animal typegroup
                         "Code"{
-
+                            -""
                         }
                         "Abbreviation"{
-
+                            -""
                         }
                         "Name"{
-
+                            -""
                         }
                         "Description"{
 
                         }
                         "Location"{
                             "HouseNumber"{
-
+                                -""
                             }
                             "CageNumber"{
-
+                                -""
                             }
                             "IncrementDirection"{
-
+                                -""
                             }
                             "IncrementAmount"{
-
+                                -""
                             }
                         }
                     }

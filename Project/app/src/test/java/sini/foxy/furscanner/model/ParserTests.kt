@@ -3,7 +3,6 @@ package sini.foxy.furscanner.model
 import org.junit.Assert
 import org.junit.Test
 import sini.foxy.furscanner.IdPair
-import java.lang.Error
 import java.lang.Exception
 
 class ParserTests {

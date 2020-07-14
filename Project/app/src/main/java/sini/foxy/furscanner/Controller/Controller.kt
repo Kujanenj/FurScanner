@@ -19,12 +19,7 @@ class Controller(private val testContext: Context) {
 
     private var currentMode : Modes =
         Modes.NO_MODE
-    private val dataBaseManager = DataBaseManager()
-    private val parser = Parser()
-    private val testWriter : FileWriterInterface =
-        FileWriterConcrete()
-    private var testFORMER =
-        XMLStringFormer(testContext)
+
 
 
      fun setMode(newMode : Modes) : Boolean{
