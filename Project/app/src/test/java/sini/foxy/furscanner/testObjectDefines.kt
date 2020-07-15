@@ -9,7 +9,7 @@ import java.lang.Exception
 
 val testPair : IdPair = IdPair("604418","5302")
 val testXMLFormer = XMLStringFormer()
-val testLocation : Location = Location(0,0,"ASC",2)
+val testLocation : Location = Location(0,0,"Ascending",2)
 val testAnimal = AnimalFactory.createAnimal(Modes.BREED, testPair, testLocation)
 val testDateTime = DateTime()
 val testSessionNumber = "TEST SESSION!"
@@ -39,8 +39,8 @@ fun getRandomIdPair():IdPair{
 }
 fun getNextLocation(previous : Location, numberOfCages : Int) : Location {
     when(previous.incDir){
-        "ASC" -> if(!(previous.cage + previous.incAmount > numberOfCages)){ // House still has room
-            return Location(previous.house,previous.cage+previous.incAmount,"ASC",previous.incAmount)
+        "Ascending" -> if(!(previous.cage + previous.incAmount > numberOfCages)){ // House still has room
+            return Location(previous.house,previous.cage+previous.incAmount,"Ascending",previous.incAmount)
         }
         else{
             return Location(previous.house+1,0,previous.incDir,previous.incAmount)

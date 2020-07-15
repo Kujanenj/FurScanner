@@ -13,8 +13,8 @@ class XMLStringFormer() {
        val generalData = dataBase.getXMLDataMap()
 
         val AppInfoTop = xml("Session"){
-            xmlns = "http://www.w3.org/2001/XMLSchema-instance xmlns:xsd=http://www.w3" +
-                    ".org/2001/XMLSchema" //TODO: This is wrong
+            globalProcessingInstruction("xml","version" to "1.0")
+            attributes(Pair("xmlns:xsd","http://www.w3.org/2001/XMLSchema"),Pair("xmlns:xsi","http://www.w3.org/2001/XMLSchema-instance"))
             "ApplicationVersion"{
                 -""
             }
@@ -30,8 +30,7 @@ class XMLStringFormer() {
             "HasChanges"{
                 -generalData["HAS_CHANGES"]!!
             }
-            "CurrentlyUsedGradingvalues"{
-                -generalData["GRADING"]!!
+            "CurrentlyUsedGradingValues"{
             }
             "GenderReset"{
                 -generalData["GENDER_RESET"]!!
@@ -40,69 +39,149 @@ class XMLStringFormer() {
                 -generalData["CURRENT_GENDER"]!!
             }
             "CurrentLocation"{
-               -""
+                    "HouseNumber"{
+                        -""
+                    }
+                    "CageNumber"{
+                        -""
+                    }
+                    "IncrementDirection"{
+                        -""
+                    }
+                    "IncrementAmount"{
+                        -""
+                    }
             }
             "AnimalGradings" {
-              -""
+
             }
             "BreedingAnimals" {
 
                 for ((id,animal) in dataBase.getBreedContainer()){
 
                     "BreedingAnimal"{
-                        "AnimalID"{
+                        "AnimalId"{
                             "BirthFarm"{
                                 -animal.birthFarm
                             }
-                            "SampoID"{
+                            "SampoId"{
                                 -animal.sampoId
                             }
                         }
                         "Gender"{
-                            -""
+                            -animal.gender
                         }
-                        //"<AnimalType xsi:type=\"NullAnimalType\">"{ TODO: check formatting online
-                        //}
-                        "Languge"{
-
+                        "AnimalType"{
+                            attribute("xsi:type","NullAnimalType")
+                        "Language"{
+                            -"Unknown"
                         }
-                        //TODO: Add animal species
-                        "Code"{
-                            -""
+                        "AnimalSpecies"{
+                            attribute("xsi:type","NullAnimalSpecies")
+                            "Code"{
+                                -"-1"
+                            }
+                            "Abbreviation"{
+                                -"-"
+                            }
                         }
-                        "Abbreviation"{
-
-                        }
-                        //TODO: add animal typegroup
-                        "Code"{
-                            -""
-                        }
-                        "Abbreviation"{
-                            -""
-                        }
+                            "AnimalTypeGroup"{
+                                attribute("xsi:type","NullAnimalTypeGroup")
+                                "Code"{
+                                    -"-1"
+                                }
+                                "Abbreviation"{
+                                    -"-"
+                                }
+                            }
                         "Name"{
-                            -""
+                            -"-"
                         }
                         "Description"{
-
+                            -"-"
+                        }
                         }
                         "Location"{
                             "HouseNumber"{
-                                -""
+                                -animal.getLocation().house.toString()
                             }
                             "CageNumber"{
-                                -""
+                                -animal.getLocation().cage.toString()
                             }
                             "IncrementDirection"{
-                                -""
+                                -animal.getLocation().incDir
                             }
                             "IncrementAmount"{
-                                -""
+                                -animal.getLocation().incAmount.toString()
                             }
+                        }
+                        "Gradings"{
+
                         }
                     }
                 }
             }
+            "LastSavedPairingDate"{
+                -"PairingDate"
+            }
+            "LastSavedPairingMethod"{
+                -""
+            }
+            "Pairings"{
+
+            }
+            "LastSavedWhelpingDate"{
+                -"whelpDate"
+            }
+            "LastSavedWhelpingMethod"{
+                -"whelpMethod"
+            }
+            "Whelpings"{
+
+            }
+            "RunningTotalCount"{
+                -"RunningTotalCount"
+            }
+            "RunningNumberOfTheCount"{
+                -"RunningSomething"
+            }
+            "RunningMaleCount"{
+                -"DataHerePlease"
+            }
+            "RunningFemaleCount"{
+                -"SomeMOreDataForMe"
+            }
+            "LitterCounts"{
+
+            }
+            "FurfixLinks"{
+
+            }
+            "Groups"{
+
+            }
+            "Syncronizations"{
+
+            }
+            "LastSavedFirstPairingDate"{
+                -""
+            }
+            "LastSavedSecondPairingDate"{
+                -""
+            }
+            "LastSavedThirdPairingDate"{
+                -""
+            }
+            "WizardLaps"{
+
+            }
+            "ApplicationErrors"{
+
+            }
+            "IsDeserializing"{
+                -"false"
+            }
+
         }
 
         return AppInfoTop.toString(PrintOptions(true,true))

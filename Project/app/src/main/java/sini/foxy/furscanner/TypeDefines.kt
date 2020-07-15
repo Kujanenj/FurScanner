@@ -2,6 +2,11 @@ package sini.foxy.furscanner
 
 
 typealias IdPair = Pair<String,String> //Fox,Farm
+enum class Genders (val data : String){
+    MALE("130"),
+    FEMALE("131"),
+    UNKNOWN("129")
+}
 
 enum class Modes {
     BREED,
