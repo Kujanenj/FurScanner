@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.initFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="init" />
+        android:layout_height="match_parent">
 
+        <EditText
+            android:id="@+id/houseEditText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="28dp"
+            android:inputType="number"
+            android:imeOptions="actionNext"
+            app:layout_constraintBottom_toBottomOf="@+id/locationVerticalDivider"
+            app:layout_constraintEnd_toStartOf="@+id/locationVerticalDivider"
+            app:layout_constraintHorizontal_bias="0.136"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/locationVerticalDivider" />
+
+        <EditText
+            android:id="@+id/cageEditText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="28dp"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/locationVerticalDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/locationVerticalDivider" />
+
+        <View
+            android:id="@+id/locationVerticalDivider"
+            android:layout_width="3dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/LocationHorizontalDivider"
+            app:layout_constraintEnd_toStartOf="@+id/cageEditText"
+            app:layout_constraintStart_toEndOf="@+id/houseEditText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.89" />
+
+        <TextView
+            android:id="@+id/houseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_house"
+
+            app:layout_constraintBottom_toTopOf="@+id/houseEditText"
+            app:layout_constraintEnd_toStartOf="@+id/locationVerticalDivider"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/cageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Cage"
+            app:layout_constraintBottom_toTopOf="@+id/cageEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/locationVerticalDivider" />
+
+
+        <View
+            android:id="@+id/LocationHorizontalDivider"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <EditText
+            android:id="@+id/incrementEditText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/locationVerticalDivider"
+            app:layout_constraintTop_toBottomOf="@+id/LocationHorizontalDivider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -1,8 +1,10 @@
 package sini.foxy.furscanner
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
+import android.widget.TextView.OnEditorActionListener
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import sini.foxy.furscanner.UI.PageAdapter
 
@@ -22,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         viewpager_main.adapter = fragmentAdapter
 
         tabs_main.setupWithViewPager(viewpager_main)
+
+
+
+
     }
 
     }
