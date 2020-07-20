@@ -2,10 +2,9 @@ package sini.foxy.furscanner
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 
-
-import sini.foxy.furscanner.model.Parser
+import kotlinx.android.synthetic.main.activity_main.*
+import sini.foxy.furscanner.UI.PageAdapter
 
 
 //TODO : replace all test stuff with actual implementations
@@ -16,23 +15,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        var testParser = Parser()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val fragmentAdapter = PageAdapter(supportFragmentManager)
+        viewpager_main.adapter = fragmentAdapter
 
-        val testButton = findViewById<Button>(R.id.fragmentButton)
-        testButton.setOnClickListener{
-            println("**Click**")
-
-            println(testParser.parse("0005302004007210"))
-
-            println(getString(R.string.breeding_animal_single))
-     /*   val testTransaction = supportFragmentManager.beginTransaction();
-            testTransaction.add(R.id.placeHolderLayout,testFragment())
-            testTransaction.commit()
-
-      */
-        }
+        tabs_main.setupWithViewPager(viewpager_main)
+    }
 
     }
-}
+
