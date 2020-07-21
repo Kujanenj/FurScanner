@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class PageAdapter (fragManager: FragmentManager) : FragmentPagerAdapter(fragManager) {
+class MyPagerAdapter (fragManager: FragmentManager) : FragmentPagerAdapter(fragManager) {
     private val tabAmount : Int= 3
     override fun getItem(position: Int): Fragment {
         return when (position) {
