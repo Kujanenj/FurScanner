@@ -7,11 +7,10 @@
     tools:context=".SimpleScanActivity">
 
 
-
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/barcodeView"
-        android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_width="437dp"
+        android:layout_height="138dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:zxing_scanner_layout="@layout/simple_scan_layout" />

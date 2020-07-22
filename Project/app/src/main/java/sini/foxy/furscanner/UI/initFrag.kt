@@ -12,8 +12,6 @@ import android.view.ViewGroup
 import android.widget.EditText
 import belka.us.androidtoggleswitch.widgets.BaseToggleSwitch
 import belka.us.androidtoggleswitch.widgets.ToggleSwitch
-
-import sini.foxy.furscanner.MainActivity
 import sini.foxy.furscanner.OnDataPass
 
 import sini.foxy.furscanner.R
@@ -59,7 +57,7 @@ class initFrag : Fragment() {
             }
         })
 
-        val incrementTextEditor = view?.findViewById<EditText>(R.id.cageEditText)
+        val incrementTextEditor = view?.findViewById<EditText>(R.id.incrementEditText)
         incrementTextEditor?.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable) {}
@@ -71,10 +69,18 @@ class initFrag : Fragment() {
                 passData(incrementTextEditor.text.toString())
             }
         })
+        val testSwitch = view?.findViewById<ToggleSwitch>(R.id.switchButton)
+        testSwitch?.setOnToggleSwitchChangeListener(object :BaseToggleSwitch.OnToggleSwitchChangeListener{
+            override fun onToggleSwitchChangeListener(position : Int, isChecked : Boolean){
+               passData(testSwitch.checkedTogglePosition.toString())
+            }
+        })
 
-      
+        /*testSwitch?.setOnToggleSwitchChangeListener {testInt,testBoolean
+        -> }
+        */
 
-
+            
        return view
     }
 
