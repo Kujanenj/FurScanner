@@ -30,10 +30,10 @@ class CustomRecyclerAdapter(private val mData : List<IdPair>) : RecyclerView.Ada
         println("Position " + position.toString() + "has data of " + mData.get(position).first)
         val idPair : IdPair = mData.get(position)
         // Set item views based on your views and data model
-        val farmTextView = viewHolder.farmLabelName
-        farmTextView.setText(idPair.first)
         val idTextView = viewHolder.idLablelName
-        idTextView.setText(idPair.second)
+        idTextView.setText(idPair.first)
+        val farmTextView = viewHolder.farmLabelName
+        farmTextView.setText(idPair.second)
     }
 
     // Returns the total count of items in the list

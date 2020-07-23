@@ -32,4 +32,5 @@
         android:gravity="start"
         android:text="SAMPOID"
        />
+
 </LinearLayout>

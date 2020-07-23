@@ -11,6 +11,7 @@ import sini.foxy.furscanner.IdPair
 
 import sini.foxy.furscanner.R
 import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
+import sini.foxy.furscanner.model.RandomGenerator
 
 /**
  * A simple [Fragment] subclass.
@@ -21,14 +22,12 @@ class prevFrag : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val randomGenerator = RandomGenerator()
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_prev, container, false)
         val recycler  = view.findViewById<View>(R.id.testRecyclerView) as RecyclerView
         val adapter = CustomRecyclerAdapter(
-            listOf(
-                IdPair("0", "123123"), IdPair("1", "114144"),
-                IdPair("2", "00")
-            )
+            randomGenerator.getIdPairList(10).reversed()
         )
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)

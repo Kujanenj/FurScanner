@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 
 import sini.foxy.furscanner.UI.Adapter.MyPagerAdapter
+import sini.foxy.furscanner.model.RandomGenerator
 
 
 //TODO : replace all test stuff with actual implementations
@@ -14,8 +15,8 @@ import sini.foxy.furscanner.UI.Adapter.MyPagerAdapter
 class MainActivity : AppCompatActivity(), OnDataPass{
 
 
-    override fun onDataPass(data: String) {
-        println("MAIN ACTIVITY " + data)
+    override fun onDataPass(data : Pair<String,Int>) {
+        println("MAIN ACTIVITY " + data.first + " " + data.second)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -29,6 +30,8 @@ class MainActivity : AppCompatActivity(), OnDataPass{
             MyPagerAdapter(supportFragmentManager)
         testViewPager.adapter = fragmentAdapter
         testTabLayout.setupWithViewPager(testViewPager)
+
+
         /*viewpager_main.adapter = fragmentAdapter
 
         tabs_main.setupWithViewPager(viewpager_main)
