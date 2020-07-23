@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.scanFrag">
+    tools:context=".UI.Fragment.scanFrag">
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/barcodeViewFrag"
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/ScanChildFrag"
-        android:name="sini.foxy.furscanner.UI.FarmAndIDFragment"
+        android:name="sini.foxy.furscanner.UI.Fragment.FarmAndIDFragment"
         android:layout_width="348dp"
         android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,8 +1,11 @@
-package sini.foxy.furscanner.UI
+package sini.foxy.furscanner.UI.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import sini.foxy.furscanner.UI.Fragment.initFrag
+import sini.foxy.furscanner.UI.Fragment.prevFrag
+import sini.foxy.furscanner.UI.Fragment.scanFrag
 
 class MyPagerAdapter (fragManager: FragmentManager) : FragmentPagerAdapter(fragManager) {
     private val tabAmount : Int= 3

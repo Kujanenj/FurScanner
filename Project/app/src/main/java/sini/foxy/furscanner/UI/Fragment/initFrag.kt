@@ -1,4 +1,4 @@
-package sini.foxy.furscanner.UI
+package sini.foxy.furscanner.UI.Fragment
 
 
 import android.content.Context

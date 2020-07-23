@@ -1,6 +1,5 @@
-package sini.foxy.furscanner.UI
+package sini.foxy.furscanner.UI.Fragment
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import sini.foxy.furscanner.IdPair
 
 import sini.foxy.furscanner.R
+import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
 
 /**
  * A simple [Fragment] subclass.
@@ -24,7 +24,12 @@ class prevFrag : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_prev, container, false)
         val recycler  = view.findViewById<View>(R.id.testRecyclerView) as RecyclerView
-        val adapter = TestRecyclerAdapter(listOf(IdPair("13","13"),IdPair("14","14")))
+        val adapter = CustomRecyclerAdapter(
+            listOf(
+                IdPair("0", "123123"), IdPair("1", "114144"),
+                IdPair("2", "00")
+            )
+        )
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
         return view

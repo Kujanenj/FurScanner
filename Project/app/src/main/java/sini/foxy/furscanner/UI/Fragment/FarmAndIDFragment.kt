@@ -1,4 +1,4 @@
-package sini.foxy.furscanner.UI
+package sini.foxy.furscanner.UI.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,7 +18,7 @@ class FarmAndIDFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_farm_and_id, container, false)
+        return inflater.inflate(R.layout.item_farm_and_id, container, false)
     }
 
 }
