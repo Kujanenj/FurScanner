@@ -40,7 +40,7 @@ class initFrag : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                passData(houseTextEditor.id.toString(),houseTextEditor.text.toString().toInt())
+                passData(houseTextEditor.id.toString(),houseTextEditor.text.toString())
             }
         })
 
@@ -53,7 +53,8 @@ class initFrag : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                passData(cageTextEditor.id.toString(),cageTextEditor.text.toString().toInt())
+                
+                passData(cageTextEditor.id.toString(),cageTextEditor.text.toString())
             }
         })
 
@@ -67,14 +68,14 @@ class initFrag : Fragment() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
 
-                passData(incrementTextEditor.id.toString(),incrementTextEditor.text.toString().toInt())
+                passData(incrementTextEditor.id.toString(),incrementTextEditor.text.toString())
             }
         })
         val testSwitch = view?.findViewById<ToggleSwitch>(R.id.switchButton)
         testSwitch?.setOnToggleSwitchChangeListener(object :BaseToggleSwitch.OnToggleSwitchChangeListener{
             override fun onToggleSwitchChangeListener(position : Int, isChecked : Boolean){
 
-               passData(testSwitch.id.toString(),testSwitch.checkedTogglePosition.toString().toInt())
+               passData(testSwitch.id.toString(),testSwitch.checkedTogglePosition.toString())
             }
         })
 
@@ -87,7 +88,7 @@ class initFrag : Fragment() {
     }
 
 
-    fun passData(widgetID : String, data : Int){
+    fun passData(widgetID : String, data : String){
         dataPasser.onDataPass(Pair(widgetID,data))
     }
 }

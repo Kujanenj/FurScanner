@@ -15,7 +15,7 @@ import sini.foxy.furscanner.model.RandomGenerator
 class MainActivity : AppCompatActivity(), OnDataPass{
 
 
-    override fun onDataPass(data : Pair<String,Int>) {
+    override fun onDataPass(data : Pair<String,String>) {
         println("MAIN ACTIVITY " + data.first + " " + data.second)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
