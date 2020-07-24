@@ -93,4 +93,7 @@ class Controller() : OnDataPass {
             currentLocation= Location(houseP,cageP,incDirP,incAmountP)
         }
     }
+    fun modifyLocation(newLocation : Location){
+        currentLocation=newLocation
+    }
 }
