@@ -1,7 +1,7 @@
 package sini.foxy.furscanner
 
 
-typealias IdPair = Pair<String,String> //Fox,Farm
+typealias IdPair = Pair<String,String> //Farm,Fox
 enum class Genders (val data : String){
     MALE("130"),
     FEMALE("131"),
@@ -21,3 +21,4 @@ class Location(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
 
 }
 val EmptyIDPair = IdPair("Empty","Empty")
+val testLocation : Location = Location(0,0,"Ascending",2)

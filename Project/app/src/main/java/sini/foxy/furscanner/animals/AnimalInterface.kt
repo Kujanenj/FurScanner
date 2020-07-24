@@ -6,8 +6,8 @@ import sini.foxy.furscanner.Location
 import sini.foxy.furscanner.Modes
 
 open class AnimalInterface(idPair: IdPair,location: Location, mode: Modes, gender : Genders = Genders.UNKNOWN) {
-    var sampoId = idPair.first
-    var birthFarm = idPair.second
+    var birthFarm = idPair.first
+    var sampoId= idPair.second
     var animalLocation = location
     val gender = gender.data
     val mode: Modes = mode

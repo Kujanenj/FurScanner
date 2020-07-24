@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import sini.foxy.furscanner.Controller.Controller
 
 import sini.foxy.furscanner.UI.Adapter.MyPagerAdapter
 import sini.foxy.furscanner.model.RandomGenerator
@@ -14,9 +15,10 @@ import sini.foxy.furscanner.model.RandomGenerator
 //DESKTOP-06IBLMI
 class MainActivity : AppCompatActivity(), OnDataPass{
 
+    private var controller = Controller()
 
     override fun onDataPass(data : Pair<String,String>) {
-        println("MAIN ACTIVITY " + data.first + " " + data.second)
+        controller.onDataPass(data)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
 

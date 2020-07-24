@@ -3,20 +3,20 @@ package sini.foxy.furscanner.UI.Adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import sini.foxy.furscanner.UI.Fragment.initFrag
-import sini.foxy.furscanner.UI.Fragment.prevFrag
-import sini.foxy.furscanner.UI.Fragment.scanFrag
+import sini.foxy.furscanner.UI.Fragment.InitFrag
+import sini.foxy.furscanner.UI.Fragment.PrevFrag
+import sini.foxy.furscanner.UI.Fragment.ScanFrag
 
 class MyPagerAdapter (fragManager: FragmentManager) : FragmentPagerAdapter(fragManager) {
     private val tabAmount : Int= 3
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                initFrag()
+                InitFrag()
             }
-            1 -> scanFrag()
+            1 -> ScanFrag()
             else -> {
-                return prevFrag()
+                return PrevFrag()
             }
         }
     }

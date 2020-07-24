@@ -17,7 +17,7 @@ import sini.foxy.furscanner.R
 /**
  * A simple [Fragment] subclass.
  */
-class scanFrag : Fragment() {
+class ScanFrag : AbstractPasserFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,13 +28,14 @@ class scanFrag : Fragment() {
     }
     fun scanFromFragment() {
         val intent = IntentIntegrator.forSupportFragment(this)
+        intent.setBeepEnabled(true)
         barcodeViewFrag.initializeFromIntent(intent.createScanIntent())
         barcodeViewFrag.decodeContinuous(object: BarcodeCallback {
             override fun barcodeResult(result: BarcodeResult?) {
                 result?.let {
                     println("Trying to handle results")
                     try {
-                        //TODO: handle barcode here
+                            passData("Bar",it.toString())
                     }
                     catch (error : Exception){
                         println(error)

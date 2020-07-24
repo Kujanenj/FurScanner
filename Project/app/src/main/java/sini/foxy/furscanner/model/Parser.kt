@@ -44,7 +44,7 @@ class Parser(){
 
 
         println("---Parse complete----")
-        return IdPair(sampoIDSubstring, farmIDSubstring)
+        return IdPair(farmIDSubstring, sampoIDSubstring)
 
     }
 
