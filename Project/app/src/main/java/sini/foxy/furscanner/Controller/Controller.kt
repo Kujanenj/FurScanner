@@ -21,13 +21,15 @@ class Controller : OnDataPass {
 
     override fun onDataPass(data: Pair<String, String>) {
         println("CONTROLLER")
-       when(data.first){
-           "bar" -> handleBarcodeResult(data.second)
-           "house" -> currentLocation.house=data.second.toInt()
-           "cage" -> currentLocation.cage=data.second.toInt()
-           "incA" -> currentLocation.incAmount=data.second.toInt()
-           "incD" -> currentLocation.incDir = data.second
+           if(data.second!=""){
+                when(data.first){
+               "bar" -> handleBarcodeResult(data.second)
+               "house" -> currentLocation.house=data.second.toInt()
+               "cage" -> currentLocation.cage=data.second.toInt()
+               "incA" -> currentLocation.incAmount=data.second.toInt()
+               "incD" -> currentLocation.incDir = data.second
        }
+           }
     }
 
     private var currentMode : Modes =
