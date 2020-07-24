@@ -3,7 +3,9 @@ package sini.foxy.furscanner.model
 import sini.foxy.furscanner.IdPair
 import java.lang.Exception
 
-
+/*!
+BarcodeParser is used for parsing scanned sagaFur codes.
+ */
 class BarcodeParser(){
     /* TODO: Add some safetyGuards, and the test all!
     Also, make parser better.

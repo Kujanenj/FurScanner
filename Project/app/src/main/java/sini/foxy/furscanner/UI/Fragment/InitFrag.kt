@@ -31,8 +31,8 @@ class InitFrag :  AbstractPasserFragment() {
         val houseTextEditor = view?.findViewById<EditText>(R.id.houseEditText)
         houseTextEditor?.addTextChangedListener(object : TextWatcher {
 
-            override fun afterTextChanged(s: Editable) {}
 
+            override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence, start: Int,

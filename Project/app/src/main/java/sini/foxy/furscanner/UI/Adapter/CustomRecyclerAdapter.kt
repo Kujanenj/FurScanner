@@ -8,11 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import sini.foxy.furscanner.IdPair
 import sini.foxy.furscanner.R
 
+/*!
+Manages the recycler list in prev fragment
+ */
 class CustomRecyclerAdapter(private val mData : List<IdPair>) : RecyclerView.Adapter<CustomRecyclerAdapter.ViewHolder>() {
 
     inner class ViewHolder(listItemView : View) : RecyclerView.ViewHolder(listItemView){
-        val farmLabelName = itemView.findViewById<TextView>(R.id.FarmLabel)
-         val idLablelName = itemView.findViewById<TextView>(R.id.IDLabel)
+        val farmLabelName: TextView = itemView.findViewById(R.id.FarmLabel)
+         val idLabelName: TextView = itemView.findViewById(R.id.IDLabel)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,7 +24,6 @@ class CustomRecyclerAdapter(private val mData : List<IdPair>) : RecyclerView.Ada
         // Inflate the custom layout
         val contactView = inflater.inflate(R.layout.item_farm_and_id, parent, false)
         // Return a new holder instance
-        println(mData)
         return ViewHolder(contactView)
     }
 
@@ -30,7 +32,7 @@ class CustomRecyclerAdapter(private val mData : List<IdPair>) : RecyclerView.Ada
         println("Position " + position.toString() + "has data of " + mData.get(position).first)
         val idPair : IdPair = mData.get(position)
         // Set item views based on your views and data model
-        val idTextView = viewHolder.idLablelName
+        val idTextView = viewHolder.idLabelName
         idTextView.setText(idPair.first)
         val farmTextView = viewHolder.farmLabelName
         farmTextView.setText(idPair.second)

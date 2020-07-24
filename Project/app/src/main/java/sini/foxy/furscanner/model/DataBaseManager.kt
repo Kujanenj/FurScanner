@@ -2,8 +2,8 @@ package sini.foxy.furscanner.model
 
 
 import sini.foxy.furscanner.Modes
-import sini.foxy.furscanner.animals.AnimalInterface
-import sini.foxy.furscanner.animals.BreedingAnimal
+import sini.foxy.furscanner.animals.AbstractAnimal
+import sini.foxy.furscanner.animals.BreedingAbstractAnimal
 import java.lang.Exception
 
 
@@ -23,11 +23,11 @@ class DataBaseManager(sessionNumber: String, dateTime: DateTime) {
     /*!
     Adds the given animal to correct database based on the mode of the animal. Returns the index of the added animal
      */
-    fun modifyDataBase(animal : AnimalInterface): Int{
+    fun modifyDataBase(abstractAnimal : AbstractAnimal): Int{
 
         var indexOfAddedAnimal = -1
-        when(animal.mode){
-            Modes.BREED -> indexOfAddedAnimal=database.addBreedAnimal(animal as BreedingAnimal)} //TODO: casting might not be safe for all types
+        when(abstractAnimal.mode){
+            Modes.BREED -> indexOfAddedAnimal=database.addBreedAnimal(abstractAnimal as BreedingAbstractAnimal)} //TODO: casting might not be safe for all types
         println(indexOfAddedAnimal)
              //TODO: Make your own execption class goddamnit
         return indexOfAddedAnimal

@@ -51,11 +51,6 @@ fun getNextLocation(previous : Location, numberOfCages : Int) : Location {
     }
     return testLocation //Todo: Make test case for descening direction
 }
-fun getRandomFurBarcode() : String {
-    var returnString = "000"
-    returnString += getRandomNumber(1000,9999)
-    returnString += "00"
-    returnString += getRandomNumber(100000,999999)
-    returnString += 0
-    return returnString
-}
+fun getRandomFurBarcode()=  "000" + getRandomNumber(1000,9999)+
+        "00"+ getRandomNumber(100000,999999)+ "0"
+

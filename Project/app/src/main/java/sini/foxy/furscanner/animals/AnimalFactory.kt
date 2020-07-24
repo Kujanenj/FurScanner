@@ -13,8 +13,8 @@ class AnimalFactory {
 
 
     companion object AnimalCreation {
-        fun createAnimal(mode : Modes,idPair: IdPair,location: Location ): AnimalInterface = when(mode){
-            Modes.BREED -> BreedingAnimal(idPair,location,mode)
+        fun createAnimal(mode : Modes,idPair: IdPair,location: Location ): AbstractAnimal = when(mode){
+            Modes.BREED -> BreedingAbstractAnimal(idPair,location,mode)
             Modes.NO_MODE -> throw Exception("Error in factory, No mode")
         }
 

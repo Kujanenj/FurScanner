@@ -1,7 +1,7 @@
 package sini.foxy.furscanner.model
 
 
-import sini.foxy.furscanner.animals.BreedingAnimal
+import sini.foxy.furscanner.animals.BreedingAbstractAnimal
 
 class DataBase {
 
@@ -18,7 +18,7 @@ class DataBase {
         "INC_AMOUNT" to "2"
     )
 
-    private val breedContainerList = mutableListOf<BreedingAnimal>()
+    private val breedContainerList = mutableListOf<BreedingAbstractAnimal>()
     fun modifyXMLDataMap(key: String, value : String){ //Todo: This function is useless?
         xmlDataMap[key]=value
     }
@@ -26,7 +26,7 @@ class DataBase {
         xmlDataMap["SESSION_NUMBER"]=sessionNumber
         xmlDataMap["DATE"]=dateTime.getDateISO()
     }
-    fun addBreedAnimal(animalToAdd: BreedingAnimal) : Int  { //TODO: Increase asymtotic speed? from n to log n
+    fun addBreedAnimal(animalToAdd: BreedingAbstractAnimal) : Int  { //TODO: Increase asymtotic speed? from n to log n
 
         for (animal in breedContainerList) {
             if (animalToAdd.sampoId==animal.sampoId) {

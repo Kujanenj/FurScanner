@@ -8,23 +8,25 @@ import sini.foxy.furscanner.model.*
 import sini.foxy.furscanner.testLocation
 import java.lang.Exception
 
-
+/*!
+The Controller class is used to control the logic of the App.
+ */
 class Controller : OnDataPass {
 
 
     private val parser = BarcodeParser()
     private val dateTime  = DateTime()
     private val dataBaseManager = DataBaseManager("TEST SESSION",dateTime)
-    private var  currentLocation = testLocation
+    private var currentLocation = testLocation
 
     override fun onDataPass(data: Pair<String, String>) {
         println("CONTROLLER")
        when(data.first){
+           "bar" -> handleBarcodeResult(data.second)
            "house" -> currentLocation.house=data.second.toInt()
            "cage" -> currentLocation.cage=data.second.toInt()
            "incA" -> currentLocation.incAmount=data.second.toInt()
            "incD" -> currentLocation.incDir = data.second
-           "bar" -> handleBarcodeResult(data.second)
        }
     }
 
@@ -82,15 +84,10 @@ class Controller : OnDataPass {
         currentLocation.cage += incrementation
     }
     fun modifyLocation(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
-        if(currentLocation!=null){
             currentLocation.house=houseP
             currentLocation.cage=cageP
             currentLocation.incDir=incDirP
             currentLocation.incAmount=incAmountP
-        }
-        else{
-            currentLocation= Location(houseP,cageP,incDirP,incAmountP)
-        }
     }
     fun modifyLocation(newLocation : Location){
         currentLocation=newLocation
