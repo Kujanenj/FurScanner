@@ -15,7 +15,7 @@ import belka.us.androidtoggleswitch.widgets.ToggleSwitch
 import sini.foxy.furscanner.R
 
 /**
- * A simple [Fragment] subclass.
+ * Fragement for setting up initial state of scanning
  */
 class InitFrag :  AbstractPasserFragment() {
 
@@ -24,7 +24,9 @@ class InitFrag :  AbstractPasserFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        /*! Inflate the layout for this fragment
+        and setup onAction listeners
+        */
         val view = inflater.inflate(R.layout.fragment_init, container, false)
         val houseTextEditor = view?.findViewById<EditText>(R.id.houseEditText)
         houseTextEditor?.addTextChangedListener(object : TextWatcher {

@@ -4,6 +4,9 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import sini.foxy.furscanner.OnDataPass
 
+/*!
+    Abstract class to inherit onPasser and fragment from.
+ */
 abstract class AbstractPasserFragment : Fragment(){
        lateinit var dataPasser : OnDataPass
     override fun onAttach(context: Context) {

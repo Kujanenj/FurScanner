@@ -13,7 +13,7 @@ open class AnimalInterface(idPair: IdPair,location: Location, mode: Modes, gende
     val mode: Modes = mode
     val animalTypeName: String = mode.toString()
 
-    fun getIDPair() = IdPair(sampoId, birthFarm)
+    fun getIDPair() = IdPair(birthFarm,sampoId)
     fun getAnimalType() = animalTypeName
     fun getLocation() = animalLocation
 

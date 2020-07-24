@@ -57,7 +57,7 @@ class XMLStringFormer() {
             }
             "BreedingAnimals" {
 
-                for ((id,animal) in dataBase.getBreedContainer()){
+                for (animal in dataBase.getBreedContainer()){
 
                     "BreedingAnimal"{
                         "AnimalId"{

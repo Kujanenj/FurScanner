@@ -6,7 +6,9 @@ import sini.foxy.furscanner.Modes
 import java.lang.Exception
 
 
-//TODO: Test this class
+/*!
+Class for creating different kind of animals
+ */
 class AnimalFactory {
 
 

@@ -1,22 +1,18 @@
 package sini.foxy.furscanner.Controller
 
-import android.content.Context
-import com.journeyapps.barcodescanner.BarcodeResult
 import sini.foxy.furscanner.Location
 import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.OnDataPass
-import sini.foxy.furscanner.XML.XMLStringFormer
 import sini.foxy.furscanner.animals.AnimalFactory
-import sini.foxy.furscanner.animals.AnimalInterface
 import sini.foxy.furscanner.model.*
 import sini.foxy.furscanner.testLocation
 import java.lang.Exception
 
 
-class Controller() : OnDataPass {
+class Controller : OnDataPass {
 
 
-    private val parser = Parser()
+    private val parser = BarcodeParser()
     private val dateTime  = DateTime()
     private val dataBaseManager = DataBaseManager("TEST SESSION",dateTime)
     private var  currentLocation = testLocation
@@ -49,15 +45,18 @@ class Controller() : OnDataPass {
 
     fun handleBarcodeResult(scanResult : String ){
 
+
+        var indexOfAddedAnimal = -1
         when(currentMode){
             Modes.NO_MODE -> throw Exception("No mode was selected!")
             Modes.BREED ->{
             try {
-               if(!dataBaseManager.modifyDataBase(AnimalFactory.createAnimal(currentMode,
-                   parser.parse(scanResult),currentLocation),currentMode)){
-                   //TODO: if something goes wrong when adding to database
-               }
-                modifyLocation(currentLocation.incAmount)
+               indexOfAddedAnimal=dataBaseManager.modifyDataBase(AnimalFactory.createAnimal(currentMode,
+                   parser.parseBarcode(scanResult),currentLocation))
+                   if(indexOfAddedAnimal!=-1){
+                        modifyLocation(currentLocation.incAmount)
+
+            }
             }
             catch (error : Exception){
                 println(error)

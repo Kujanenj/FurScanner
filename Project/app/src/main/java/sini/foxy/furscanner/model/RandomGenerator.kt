@@ -4,9 +4,6 @@ import sini.foxy.furscanner.IdPair
 
 class RandomGenerator {
 
-
-
-
     fun getIdPairList(amount : Int):List<IdPair>{
         var returnList : MutableList<IdPair> = mutableListOf()
 

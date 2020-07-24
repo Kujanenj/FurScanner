@@ -4,11 +4,11 @@ import sini.foxy.furscanner.IdPair
 import java.lang.Exception
 
 
-class Parser(){
+class BarcodeParser(){
     /* TODO: Add some safetyGuards, and the test all!
     Also, make parser better.
      */
-     fun parse(barcode : String) : IdPair {
+     fun parseBarcode(barcode : String) : IdPair {
        println("----Parse start---")
 
         if(barcode.length!=16){

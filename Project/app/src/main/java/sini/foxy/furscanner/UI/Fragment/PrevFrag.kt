@@ -14,7 +14,7 @@ import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
 import sini.foxy.furscanner.model.RandomGenerator
 
 /**
- * A simple [Fragment] subclass.
+ *  Shows the previous scan results
  */
 class PrevFrag : Fragment() {
 

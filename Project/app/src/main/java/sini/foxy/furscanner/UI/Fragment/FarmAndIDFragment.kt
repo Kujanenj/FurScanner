@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import sini.foxy.furscanner.R
 
 /**
- * A simple [Fragment] subclass.
+ * Fragment displaying the ID pair
  */
 class FarmAndIDFragment : Fragment() {
 

@@ -1,7 +1,6 @@
 package sini.foxy.furscanner.model
 
-import sini.foxy.furscanner.IdPair
-import sini.foxy.furscanner.Location
+
 import sini.foxy.furscanner.animals.BreedingAnimal
 
 class DataBase {
@@ -19,9 +18,7 @@ class DataBase {
         "INC_AMOUNT" to "2"
     )
 
-
-    private  val breedContainer = mutableMapOf<String, BreedingAnimal>()//List of breeding animals
-
+    private val breedContainerList = mutableListOf<BreedingAnimal>()
     fun modifyXMLDataMap(key: String, value : String){ //Todo: This function is useless?
         xmlDataMap[key]=value
     }
@@ -29,17 +26,20 @@ class DataBase {
         xmlDataMap["SESSION_NUMBER"]=sessionNumber
         xmlDataMap["DATE"]=dateTime.getDateISO()
     }
-    fun addBreedAnimal(animalToAdd: BreedingAnimal)  { //TODO: Increase asymtotic speed? from n to log n
-        if(breedContainer.contains(animalToAdd.sampoId)){
-            throw Exception("Animal: "+ animalToAdd.sampoId + " already contained in database!")
+    fun addBreedAnimal(animalToAdd: BreedingAnimal) : Int  { //TODO: Increase asymtotic speed? from n to log n
+
+        for (animal in breedContainerList) {
+            if (animalToAdd.sampoId==animal.sampoId) {
+                println("Animal: " + animalToAdd.sampoId + " already contained in database!")
+                return -1
+            }
         }
-
-        breedContainer[animalToAdd.sampoId]=animalToAdd
+        breedContainerList.add(animalToAdd)
         println("Added breeding animal, " + animalToAdd.getIDPair() + ", \n with location of : " + animalToAdd.getLocation().getLocationData())
-
+        return breedContainerList.size
     }
     fun getXMLDataMap() = xmlDataMap
-    fun getBreedContainer() = breedContainer
+    fun getBreedContainer() = breedContainerList
 }
 
 

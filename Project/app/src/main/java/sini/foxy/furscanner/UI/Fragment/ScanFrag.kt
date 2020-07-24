@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_scan.*
 import sini.foxy.furscanner.R
 
 /**
- * A simple [Fragment] subclass.
+ * Contains the Camera Scanner
  */
 class ScanFrag : AbstractPasserFragment() {
 

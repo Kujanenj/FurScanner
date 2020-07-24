@@ -3,18 +3,32 @@ package sini.foxy.furscanner.model
 import org.junit.Assert
 import org.junit.Test
 import sini.foxy.furscanner.*
+import sini.foxy.furscanner.animals.AnimalFactory
 
 
 class DataBaseTests {
     private val testDataBase : DataBaseManager = DataBaseManager(testSessionNumber, testDateTime)
     @Test
     fun testModifyDataBase(){
-        Assert.assertEquals(true,testDataBase.modifyDataBase(testAnimal,Modes.BREED))
+        Assert.assertEquals(1,testDataBase.modifyDataBase(testAnimal))
     }
     @Test
     fun testAddExistingAnimal(){
-        Assert.assertEquals(true,testDataBase.modifyDataBase(testAnimal,Modes.BREED))
-        Assert.assertEquals(false,testDataBase.modifyDataBase(testAnimal,Modes.BREED))}
+        Assert.assertEquals(1,testDataBase.modifyDataBase(testAnimal))
+        Assert.assertEquals(-1,testDataBase.modifyDataBase(testAnimal))
+    }
+    @Test
+    fun addAnimalWithSameID(){
+        Assert.assertEquals(1,testDataBase.modifyDataBase(AnimalFactory.createAnimal(Modes.BREED,
+            IdPair("10","10"),
+            testLocation
+       )))
+        Assert.assertEquals(-1,testDataBase.modifyDataBase(AnimalFactory.createAnimal(Modes.BREED,
+            IdPair("10","10"),
+            testLocation
+        )))
+    }
+
     @Test
     fun testRandomDataBase10(){
         Assert.assertEquals(10, getPopulatedDataBaseManager(10,Modes.BREED).getDataBase().getBreedContainer().size)
