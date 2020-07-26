@@ -35,7 +35,7 @@ class ScanFrag : AbstractPasserFragment() {
                 result?.let {
                     println("Trying to handle results")
                     try {
-                            passData("Bar",it.toString())
+                            passData("bar",it.toString())
                     }
                     catch (error : Exception){
                         println(error)

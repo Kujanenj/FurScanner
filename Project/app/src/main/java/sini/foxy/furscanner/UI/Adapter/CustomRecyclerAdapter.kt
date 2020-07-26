@@ -7,11 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import sini.foxy.furscanner.IdPair
 import sini.foxy.furscanner.R
+import sini.foxy.furscanner.animals.AbstractAnimal
 
 /*!
 Manages the recycler list in prev fragment
  */
-class CustomRecyclerAdapter(private val mData : List<IdPair>) : RecyclerView.Adapter<CustomRecyclerAdapter.ViewHolder>() {
+class CustomRecyclerAdapter(private val mData : List<AbstractAnimal>) : RecyclerView.Adapter<CustomRecyclerAdapter.ViewHolder>() {
 
     inner class ViewHolder(listItemView : View) : RecyclerView.ViewHolder(listItemView){
         val farmLabelName: TextView = itemView.findViewById(R.id.FarmLabel)
@@ -29,8 +30,8 @@ class CustomRecyclerAdapter(private val mData : List<IdPair>) : RecyclerView.Ada
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get the data model based on position
-        println("Position " + position.toString() + "has data of " + mData.get(position).first)
-        val idPair : IdPair = mData.get(position)
+        println("Position " + position.toString() + "has data of " + mData.get(position).getIDPair().first)
+        val idPair : IdPair = mData.get(position).getIDPair()
         // Set item views based on your views and data model
         val idTextView = viewHolder.idLabelName
         idTextView.setText(idPair.first)

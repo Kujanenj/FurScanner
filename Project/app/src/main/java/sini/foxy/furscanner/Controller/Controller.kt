@@ -3,6 +3,7 @@ package sini.foxy.furscanner.Controller
 import sini.foxy.furscanner.Location
 import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.OnDataPass
+import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
 import sini.foxy.furscanner.animals.AnimalFactory
 import sini.foxy.furscanner.model.*
 import sini.foxy.furscanner.testLocation
@@ -16,11 +17,11 @@ class Controller : OnDataPass {
 
     private val parser = BarcodeParser()
     private val dateTime  = DateTime()
-    private val dataBaseManager = DataBaseManager("TEST SESSION",dateTime)
+    val dataBaseManager = DataBaseManager("TEST SESSION",dateTime)
     private var currentLocation = testLocation
+    private lateinit var adapter : CustomRecyclerAdapter
 
     override fun onDataPass(data: Pair<String, String>) {
-        println("CONTROLLER")
            if(data.second!=""){
                 when(data.first){
                "bar" -> handleBarcodeResult(data.second)
@@ -30,6 +31,10 @@ class Controller : OnDataPass {
                "incD" -> currentLocation.incDir = data.second
        }
            }
+    }
+
+    override fun onDataPass(adapter: CustomRecyclerAdapter) {
+        setAdapter(adapter)
     }
 
     private var currentMode : Modes =
@@ -47,7 +52,7 @@ class Controller : OnDataPass {
         return true
     }
 
-    fun handleBarcodeResult(scanResult : String ){
+    private fun handleBarcodeResult(scanResult : String ){
 
 
         var indexOfAddedAnimal = -1
@@ -59,8 +64,9 @@ class Controller : OnDataPass {
                    parser.parseBarcode(scanResult),currentLocation))
                    if(indexOfAddedAnimal!=-1){
                         modifyLocation(currentLocation.incAmount)
-
+                        adapter.notifyItemInserted(indexOfAddedAnimal)
             }
+
             }
             catch (error : Exception){
                 println(error)
@@ -71,9 +77,11 @@ class Controller : OnDataPass {
     }
     }
 
-    fun handleCompleteButton(){
+    fun setAdapter(newAdapter : CustomRecyclerAdapter){
+        adapter=newAdapter
+    }
+    private fun handleDatBaseChange(indexOfAddedAnimal : Int){
     try {
-       //testWriter.writeFile("/data/data/sini.foxy.furscanner/cache/testfile.txt",testFORMER.createTest())
 
     }
     catch (error : Exception){
@@ -94,4 +102,5 @@ class Controller : OnDataPass {
     fun modifyLocation(newLocation : Location){
         currentLocation=newLocation
     }
+
 }

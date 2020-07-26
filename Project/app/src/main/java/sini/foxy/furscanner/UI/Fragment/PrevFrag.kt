@@ -11,26 +11,30 @@ import sini.foxy.furscanner.IdPair
 
 import sini.foxy.furscanner.R
 import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
+import sini.foxy.furscanner.animals.AbstractAnimal
+import sini.foxy.furscanner.model.DataBase
 import sini.foxy.furscanner.model.RandomGenerator
 
 /**
  *  Shows the previous scan results
  */
-class PrevFrag : Fragment() {
+class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
 
+    private lateinit var adapter : CustomRecyclerAdapter
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val randomGenerator = RandomGenerator()
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_prev, container, false)
         val recycler  = view.findViewById<View>(R.id.testRecyclerView) as RecyclerView
-        val adapter = CustomRecyclerAdapter(
-            randomGenerator.getIdPairList(3).reversed()
-        )
+         adapter = CustomRecyclerAdapter(dataList)
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
+        passAdapter(adapter)
         return view
     }
 

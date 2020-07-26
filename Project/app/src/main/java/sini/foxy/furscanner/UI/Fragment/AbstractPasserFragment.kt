@@ -3,6 +3,7 @@ package sini.foxy.furscanner.UI.Fragment
 import android.content.Context
 import androidx.fragment.app.Fragment
 import sini.foxy.furscanner.OnDataPass
+import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
 
 /*!
     Abstract class to inherit onPasser and fragment from.
@@ -16,5 +17,7 @@ abstract class AbstractPasserFragment : Fragment(){
     fun passData(widgetID : String, data : String){
         dataPasser.onDataPass(Pair(widgetID,data))
     }
-
+    fun passAdapter(adapter : CustomRecyclerAdapter){
+        dataPasser.onDataPass(adapter)
+    }
 }

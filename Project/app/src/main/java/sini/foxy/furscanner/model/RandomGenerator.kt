@@ -19,4 +19,7 @@ class RandomGenerator {
         return IdPair(getRandomNumber(100000,999999).toString(), getRandomNumber(1000,9999).toString())
     }
 
+    fun getRandomFurBarcode()=  "000" + getRandomNumber(1000,9999)+
+            "00"+ getRandomNumber(100000,999999)+ "0"
     }
+
