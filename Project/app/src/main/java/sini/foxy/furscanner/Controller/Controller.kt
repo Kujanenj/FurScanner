@@ -24,11 +24,12 @@ class Controller : OnDataPass {
     override fun onDataPass(data: Pair<String, String>) {
            if(data.second!=""){
                 when(data.first){
-               "bar" -> handleBarcodeResult(data.second)
-               "house" -> currentLocation.house=data.second.toInt()
-               "cage" -> currentLocation.cage=data.second.toInt()
-               "incA" -> currentLocation.incAmount=data.second.toInt()
-               "incD" -> currentLocation.incDir = data.second
+                   "bar" -> handleBarcodeResult(data.second)
+                   "house" -> currentLocation.house=data.second.toInt()
+                   "cage" -> currentLocation.cage=data.second.toInt()
+                   "incA" -> currentLocation.incAmount=data.second.toInt()
+                   "incD" -> currentLocation.incDir = data.second
+                    "test"->populateDataBase()
        }
            }
     }
@@ -61,12 +62,11 @@ class Controller : OnDataPass {
             Modes.BREED ->{
             try {
                indexOfAddedAnimal=dataBaseManager.modifyDataBase(AnimalFactory.createAnimal(currentMode,
-                   parser.parseBarcode(scanResult),currentLocation))
+                   parser.parseBarcode(scanResult),LocationFactory.createLocation(currentLocation.getLocationData())))
                    if(indexOfAddedAnimal!=-1){
                         modifyLocation(currentLocation.incAmount)
                         adapter.notifyItemInserted(indexOfAddedAnimal)
-            }
-
+                }
             }
             catch (error : Exception){
                 println(error)
@@ -78,6 +78,7 @@ class Controller : OnDataPass {
     }
 
     fun setAdapter(newAdapter : CustomRecyclerAdapter){
+        println("Setting adapter")
         adapter=newAdapter
     }
     private fun handleDatBaseChange(indexOfAddedAnimal : Int){
@@ -91,6 +92,7 @@ class Controller : OnDataPass {
     }
 
     fun modifyLocation(incrementation : Int){
+        println("Current controller location is " + currentLocation.getLocationData())
         currentLocation.cage += incrementation
     }
     fun modifyLocation(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
@@ -102,5 +104,16 @@ class Controller : OnDataPass {
     fun modifyLocation(newLocation : Location){
         currentLocation=newLocation
     }
+    fun populateDataBase(){
 
+        val randomGenerator = RandomGenerator()
+        for (i in 0..1){
+         handleBarcodeResult(randomGenerator.getRandomFurBarcode())
+    }
+
+        println("-----")
+        for (animal in dataBaseManager.getDataBase().getBreedContainer()){
+            println(animal.getLocation().getLocationData())
+        }
+    }
 }

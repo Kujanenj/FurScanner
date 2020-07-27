@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 import androidx.fragment.app.Fragment
 import com.google.zxing.ResultPoint
@@ -24,7 +25,12 @@ class ScanFrag : AbstractPasserFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return  inflater.inflate(R.layout.fragment_scan, container, false)
+        var view = inflater.inflate(R.layout.fragment_scan, container, false)
+        val button = view.findViewById<Button>(R.id.testButton)
+        button.setOnClickListener{
+            passData("test","sss")
+        }
+        return view
     }
     fun scanFromFragment() {
         val intent = IntentIntegrator.forSupportFragment(this)

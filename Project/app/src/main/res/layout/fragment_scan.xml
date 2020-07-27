@@ -8,24 +8,34 @@
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/barcodeViewFrag"
-        android:layout_width="417dp"
-        android:layout_height="290dp"
+
+        android:layout_width="409dp"
+        android:layout_height="309dp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:zxing_scanner_layout="@layout/simple_scan_layout" />
 
     <fragment
         android:id="@+id/ScanChildFrag"
-        android:name="sini.foxy.furscanner.UI.Fragment.IdAndLocationFrag"
-        android:layout_width="375dp"
-        android:layout_height="210dp"
+        android:name="sini.foxy.furscanner.UI.Fragment.FarmAndIDFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921">
+        app:layout_constraintTop_toBottomOf="@+id/barcodeViewFrag"
+        app:layout_constraintVertical_bias="0.597">
 
     </fragment>
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/ScanChildFrag"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barcodeViewFrag" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
