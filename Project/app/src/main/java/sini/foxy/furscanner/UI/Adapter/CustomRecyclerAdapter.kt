@@ -17,6 +17,8 @@ class CustomRecyclerAdapter(private val mData : List<AbstractAnimal>) : Recycler
     inner class ViewHolder(listItemView : View) : RecyclerView.ViewHolder(listItemView){
         val farmLabelName: TextView = itemView.findViewById(R.id.FarmLabel)
          val idLabelName: TextView = itemView.findViewById(R.id.IDLabel)
+        val cageLabelName : TextView= itemView.findViewById(R.id.testCageLabel)
+        val houseLabelName : TextView = itemView.findViewById(R.id.testHouseLabel)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,13 +32,15 @@ class CustomRecyclerAdapter(private val mData : List<AbstractAnimal>) : Recycler
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get the data model based on position
-        println("Position " + position.toString() + "has data of " + mData.get(position).getIDPair().first)
-        val idPair : IdPair = mData.get(position).getIDPair()
+
+        var testAnimal = mData.get(position)
+
+
         // Set item views based on your views and data model
-        val idTextView = viewHolder.idLabelName
-        idTextView.setText(idPair.first)
-        val farmTextView = viewHolder.farmLabelName
-        farmTextView.setText(idPair.second)
+        viewHolder.houseLabelName.setText(testAnimal.getLocation().house.toString())
+        viewHolder.cageLabelName.setText(testAnimal.getLocation().cage.toString())
+        viewHolder.idLabelName.setText(testAnimal.getIDPair().first)
+        viewHolder.farmLabelName.setText(testAnimal.getIDPair().second)
     }
 
     // Returns the total count of items in the list

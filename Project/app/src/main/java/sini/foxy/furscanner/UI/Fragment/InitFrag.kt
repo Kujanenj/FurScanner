@@ -19,6 +19,10 @@ import sini.foxy.furscanner.R
  */
 class InitFrag :  AbstractPasserFragment() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        println("ASDASD")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

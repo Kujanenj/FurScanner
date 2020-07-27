@@ -24,10 +24,8 @@ class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_prev, container, false)
         val recycler  = view.findViewById<View>(R.id.testRecyclerView) as RecyclerView
@@ -37,5 +35,4 @@ class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
         passAdapter(adapter)
         return view
     }
-
 }
