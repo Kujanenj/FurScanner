@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="410dp"
+        android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:orientation="horizontal"
         android:paddingTop="5dp"
@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/FarmLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="101dp"
             android:layout_height="32dp"
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
@@ -30,15 +30,15 @@
             android:text="Farm ID" />
 
         <View
-            android:id="@+id/divider17"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
-            android:layout_weight="0.2"
+            android:id="@+id/divider2"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/IDLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="101dp"
             android:layout_height="32dp"
             android:layout_marginStart="0dp"
             android:layout_weight="1"
@@ -46,15 +46,15 @@
             android:text="Sampo ID" />
 
         <View
-            android:id="@+id/divider18"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
-            android:layout_weight="0.2"
+            android:id="@+id/divider8"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/testHouseLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="101dp"
             android:layout_height="32dp"
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
@@ -62,15 +62,15 @@
             android:text="House" />
 
         <View
-            android:id="@+id/divider19"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
-            android:layout_weight="0.2"
+            android:id="@+id/divider9"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/testCageLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="101dp"
             android:layout_height="32dp"
             android:layout_marginStart="0dp"
             android:layout_weight="1"
