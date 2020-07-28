@@ -16,18 +16,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:zxing_scanner_layout="@layout/simple_scan_layout" />
 
-    <fragment
-        android:id="@+id/ScanChildFrag"
-        android:name="sini.foxy.furscanner.UI.Fragment.FarmAndIDFragment"
+    <include
+        layout="@layout/item_farm_and_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barcodeViewFrag"
-        app:layout_constraintVertical_bias="0.597">
+        app:layout_constraintTop_toBottomOf="@+id/testButton"
+        tools:layout_editor_absoluteX="0dp">
 
-    </fragment>
+    </include>
 
     <Button
         android:id="@+id/testButton"
