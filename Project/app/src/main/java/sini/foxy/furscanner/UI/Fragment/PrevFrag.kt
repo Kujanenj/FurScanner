@@ -25,7 +25,7 @@ class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_prev, container, false)
         val recycler  = view.findViewById<View>(R.id.testRecyclerView) as RecyclerView
-         adapter = CustomRecyclerAdapter(dataList)
+        adapter = CustomRecyclerAdapter(dataList)
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
         passAdapter(adapter)

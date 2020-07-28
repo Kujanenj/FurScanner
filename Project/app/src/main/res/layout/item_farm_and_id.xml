@@ -9,73 +9,74 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_width="410dp"
+        android:layout_height="52dp"
         android:orientation="horizontal"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
             android:id="@+id/FarmLabel"
-            android:layout_width="180dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="end"
-            android:text="FarmIDHERE" />
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Farm ID" />
 
         <View
-            android:id="@+id/divider"
-            android:layout_width="7dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="32dp"
+            android:id="@+id/divider17"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="0.2"
             android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/IDLabel"
-            android:layout_width="180dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="16dp"
-            android:gravity="start"
-            android:text="SAMPOID" />
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sampo ID" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:orientation="horizontal"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
+        <View
+            android:id="@+id/divider18"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="0.2"
+            android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/testHouseLabel"
-            android:layout_width="180dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="end"
-            android:text="TextView" />
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="House" />
 
         <View
-
-            android:layout_width="7dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="32dp"
+            android:id="@+id/divider19"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_weight="0.2"
             android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/testCageLabel"
-            android:layout_width="180dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="16dp"
-            android:gravity="start"
-            android:text="TextView" />
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Cage" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
