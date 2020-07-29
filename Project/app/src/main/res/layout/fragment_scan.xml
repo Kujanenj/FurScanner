@@ -9,30 +9,37 @@
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/barcodeViewFrag"
 
-        android:layout_width="409dp"
-        android:layout_height="309dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
 
+        app:layout_constraintBottom_toTopOf="@+id/testButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:zxing_scanner_layout="@layout/simple_scan_layout" />
 
-    <include
-        layout="@layout/item_farm_and_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testButton"
-        tools:layout_editor_absoluteX="0dp">
-
-    </include>
-
     <Button
         android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/ScanChildFrag"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Test scan"
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barcodeViewFrag" />
+        app:layout_constraintTop_toBottomOf="@+id/barcodeViewFrag"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/item_farm_and_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
