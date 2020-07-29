@@ -39,8 +39,8 @@ class CustomRecyclerAdapter(private val mData : List<AbstractAnimal>) : Recycler
         // Set item views based on your views and data model
         viewHolder.houseLabelName.setText(testAnimal.getLocation().house.toString())
         viewHolder.cageLabelName.setText(testAnimal.getLocation().cage.toString())
-        viewHolder.idLabelName.setText(testAnimal.getIDPair().first)
-        viewHolder.farmLabelName.setText(testAnimal.getIDPair().second)
+        viewHolder.idLabelName.setText(testAnimal.getIDPair().second)
+        viewHolder.farmLabelName.setText(testAnimal.getIDPair().first)
     }
 
     // Returns the total count of items in the list
