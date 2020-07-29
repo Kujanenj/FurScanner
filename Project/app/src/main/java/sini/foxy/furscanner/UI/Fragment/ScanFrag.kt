@@ -1,11 +1,14 @@
 package sini.foxy.furscanner.UI.Fragment
 
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 
 import androidx.fragment.app.Fragment
 import com.google.zxing.ResultPoint
@@ -13,6 +16,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import kotlinx.android.synthetic.main.fragment_scan.*
+import org.w3c.dom.Text
 import sini.foxy.furscanner.R
 
 /**
@@ -29,6 +33,11 @@ class ScanFrag : AbstractPasserFragment() {
         val button = view.findViewById<Button>(R.id.testButton)
         button.setOnClickListener{
             passData("test","sss")
+
+        }
+        val label = view.findViewById<TextView>(R.id.item_farm_and_id_CageLabel)
+        label.setOnClickListener{
+            println("Clicks")
         }
         return view
     }
@@ -58,6 +67,7 @@ class ScanFrag : AbstractPasserFragment() {
         scanFromFragment()
         barcodeViewFrag.resume()
     }
+
 
 
 }
