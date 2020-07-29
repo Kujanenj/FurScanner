@@ -41,9 +41,6 @@ class InitFrag :  AbstractPasserFragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                if(houseTextEditor.text==null){
-                    println("VITUIKS MENI JA KAIKKI ON NULL")
-            }
                 passData("house",houseTextEditor.text.toString())
             }
         })

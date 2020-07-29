@@ -113,7 +113,9 @@ class Controller : OnDataPass {
 
         println("-----")
         for (animal in dataBaseManager.getDataBase().getBreedContainer()){
-            println(animal.getLocation().getLocationData())
+            println(animal.getIDPair())
         }
     }
+
+
 }

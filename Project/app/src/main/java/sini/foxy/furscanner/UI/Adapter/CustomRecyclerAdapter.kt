@@ -1,10 +1,12 @@
 package sini.foxy.furscanner.UI.Adapter
 
 import android.app.AlertDialog
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
 import sini.foxy.furscanner.IdPair
 import sini.foxy.furscanner.R
@@ -43,11 +45,20 @@ class CustomRecyclerAdapter(private val mData : List<AbstractAnimal>, prevFragme
         // Set item views based on your views and data model
         viewHolder.houseLabelName.setText(testAnimal.getLocation().house.toString())
         viewHolder.houseLabelName.setOnClickListener{
-            prevFragment.showDialog()
+         prevFragment.showDialog(testAnimal)
     }
         viewHolder.cageLabelName.setText(testAnimal.getLocation().cage.toString())
+        viewHolder.cageLabelName.setOnClickListener{
+            prevFragment.showDialog(testAnimal)
+        }
         viewHolder.idLabelName.setText(testAnimal.getIDPair().first)
+        viewHolder.idLabelName.setOnClickListener{
+            prevFragment.showDialog(testAnimal)
+        }
         viewHolder.farmLabelName.setText(testAnimal.getIDPair().second)
+        viewHolder.farmLabelName.setOnClickListener{
+            prevFragment.showDialog(testAnimal)
+        }
     }
 
     // Returns the total count of items in the list
