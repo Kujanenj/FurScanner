@@ -48,17 +48,19 @@ class CustomRecyclerAdapter(private val mData : List<AbstractAnimal>, prevFragme
          prevFragment.showDialog(testAnimal)
     }
         viewHolder.cageLabelName.setText(testAnimal.getLocation().cage.toString())
+
         viewHolder.cageLabelName.setOnClickListener{
             prevFragment.showDialog(testAnimal)
         }
-        viewHolder.idLabelName.setText(testAnimal.getIDPair().first)
+        viewHolder.idLabelName.setText(testAnimal.getIDPair().second)
         viewHolder.idLabelName.setOnClickListener{
             prevFragment.showDialog(testAnimal)
         }
-        viewHolder.farmLabelName.setText(testAnimal.getIDPair().second)
+        viewHolder.farmLabelName.setText(testAnimal.getIDPair().first)
         viewHolder.farmLabelName.setOnClickListener{
             prevFragment.showDialog(testAnimal)
         }
+
     }
 
     // Returns the total count of items in the list
