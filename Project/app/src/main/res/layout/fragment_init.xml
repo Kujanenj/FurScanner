@@ -14,12 +14,10 @@
             android:id="@+id/houseEditText"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginStart="28dp"
-            android:inputType="number"
             android:imeOptions="actionNext"
+            android:inputType="number"
             app:layout_constraintBottom_toBottomOf="@+id/locationVerticalDivider"
             app:layout_constraintEnd_toStartOf="@+id/locationVerticalDivider"
-            app:layout_constraintHorizontal_bias="0.136"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/locationVerticalDivider" />
 
@@ -27,24 +25,21 @@
             android:id="@+id/cageEditText"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="28dp"
             android:inputType="number"
             app:layout_constraintBottom_toBottomOf="@+id/locationVerticalDivider"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/locationVerticalDivider"
             app:layout_constraintTop_toTopOf="@+id/locationVerticalDivider" />
 
         <View
             android:id="@+id/locationVerticalDivider"
             android:layout_width="3dp"
             android:layout_height="40dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginTop="50dp"
             android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toTopOf="@+id/LocationHorizontalDivider"
             app:layout_constraintEnd_toStartOf="@+id/cageEditText"
             app:layout_constraintStart_toEndOf="@+id/houseEditText"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.885" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/init_houseLabel"
@@ -67,24 +62,23 @@
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="@+id/cageEditText" />
 
+
         <View
             android:id="@+id/LocationHorizontalDivider"
-            android:layout_width="409dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginTop="50dp"
             android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15" />
-
+            app:layout_constraintTop_toBottomOf="@+id/IncrementVerticalDivider"
+            tools:layout_editor_absoluteX="436dp" />
 
         <EditText
             android:id="@+id/incrementEditText"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="36dp"
             android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/locationVerticalDivider"
             app:layout_constraintTop_toBottomOf="@+id/locationVerticalDivider" />
 
@@ -93,8 +87,8 @@
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="36dp"
-            android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toStartOf="@+id/locationVerticalDivider"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/locationVerticalDivider"
             app:textToggleLeft="ASC"
             app:textToggleRight="DEC"
