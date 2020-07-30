@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import belka.us.androidtoggleswitch.widgets.BaseToggleSwitch
 import belka.us.androidtoggleswitch.widgets.ToggleSwitch
+import sini.foxy.furscanner.CustomTextWatcher
 
 import sini.foxy.furscanner.R
 
@@ -33,12 +34,7 @@ class InitFrag :  AbstractPasserFragment() {
         */
         val view = inflater.inflate(R.layout.fragment_init, container, false)
         val houseTextEditor = view?.findViewById<EditText>(R.id.houseEditText)
-        houseTextEditor?.addTextChangedListener(object : TextWatcher {
-
-
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
+        houseTextEditor?.addTextChangedListener(object : CustomTextWatcher() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 passData("house",houseTextEditor.text.toString())
@@ -46,12 +42,7 @@ class InitFrag :  AbstractPasserFragment() {
         })
 
         val cageTextEditor = view?.findViewById<EditText>(R.id.cageEditText)
-        cageTextEditor?.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(s: Editable) {}
-
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
+        cageTextEditor?.addTextChangedListener(object : CustomTextWatcher() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
 
@@ -60,12 +51,7 @@ class InitFrag :  AbstractPasserFragment() {
         })
 
         val incrementTextEditor = view?.findViewById<EditText>(R.id.incrementEditText)
-        incrementTextEditor?.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(s: Editable) {}
-
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
+        incrementTextEditor?.addTextChangedListener(object : CustomTextWatcher() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
 

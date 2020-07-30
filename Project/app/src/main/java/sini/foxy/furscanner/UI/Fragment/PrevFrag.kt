@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import sini.foxy.furscanner.CustomTextWatcher
 
 import sini.foxy.furscanner.R
 import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
@@ -51,42 +52,27 @@ class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
         val layoutLower = dialogView.findViewById<View>(R.id.alert_layout_lower)
         val sampoIDLabelLower= layoutLower.findViewById<EditText>(R.id.item_farm_and_id_editable_IDLabel)
         sampoIDLabelLower.setText(animalToModify.sampoId)
-        sampoIDLabelLower?.addTextChangedListener(object : TextWatcher {
-
-
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
+        sampoIDLabelLower?.addTextChangedListener(object : CustomTextWatcher() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 animalToModify.sampoId=sampoIDLabelLower.text.toString()
                 notifyAdapter(indexOfAnimalToModify)
             }
+
         })
         val farmLabelLower = layoutLower.findViewById<EditText>(R.id.item_farm_and_id_editable_FarmLabel)
         farmLabelLower.setText(animalToModify.birthFarm)
-        farmLabelLower?.addTextChangedListener(object : TextWatcher {
-
-
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+        farmLabelLower?.addTextChangedListener(object : CustomTextWatcher() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-
                     animalToModify.birthFarm = farmLabelLower.text.toString()
                     notifyAdapter(indexOfAnimalToModify)
-
             }
         })
         val houseLabelLower  =layoutLower.findViewById<EditText>(R.id.item_farm_and_id_editable_HouseLabel)
         houseLabelLower.setText(animalToModify.getLocation().house.toString())
-        houseLabelLower?.addTextChangedListener(object : TextWatcher {
-
-
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
+        houseLabelLower?.addTextChangedListener(object : CustomTextWatcher() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 // Tests that editText label isn't empty
@@ -101,15 +87,9 @@ class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
         })
         val cageLabelLower = layoutLower.findViewById<EditText>(R.id.item_farm_and_id_editable_CageLabel)
         cageLabelLower.setText(animalToModify.getLocation().cage.toString())
-        cageLabelLower?.addTextChangedListener(object : TextWatcher {
-
-
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
+        cageLabelLower?.addTextChangedListener(object : CustomTextWatcher(){
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                // Tests that editText label isn't empty
                 try {
                     animalToModify.getLocation().cage=(cageLabelLower.text.toString().toInt())
                 }
