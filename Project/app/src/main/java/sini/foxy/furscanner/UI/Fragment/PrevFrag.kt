@@ -3,19 +3,13 @@ package sini.foxy.furscanner.UI.Fragment
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
-import android.text.Editable
-import android.text.Layout
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import sini.foxy.furscanner.CustomTextWatcher
+import sini.foxy.furscanner.model.Listeners.CustomTextWatcher
 
 import sini.foxy.furscanner.R
 import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter

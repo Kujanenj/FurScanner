@@ -1,6 +1,7 @@
 package sini.foxy.furscanner.model
 
 
+import sini.foxy.furscanner.Exception.IllegalAnimalException
 import sini.foxy.furscanner.animals.BreedingAbstractAnimal
 
 class DataBase {
@@ -30,8 +31,8 @@ class DataBase {
 
         for (animal in breedContainerList) {
             if (animalToAdd.sampoId==animal.sampoId) {
-                println("Animal: " + animalToAdd.sampoId + " already contained in database!")
-                return -1
+                throw IllegalAnimalException("Animal: " + animalToAdd.sampoId + " already exists in breedContainer","DatBase.addBreedAnimal")
+
             }
         }
         breedContainerList.add(animalToAdd)

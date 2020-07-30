@@ -1,5 +1,6 @@
 package sini.foxy.furscanner.animals
 
+import sini.foxy.furscanner.Exception.IllegalModeException
 import sini.foxy.furscanner.IdPair
 import sini.foxy.furscanner.Location
 import sini.foxy.furscanner.Modes
@@ -15,7 +16,7 @@ class AnimalFactory {
     companion object AnimalCreation {
         fun createAnimal(mode : Modes,idPair: IdPair,location: Location ): AbstractAnimal = when(mode){
             Modes.BREED -> BreedingAbstractAnimal(idPair,location,mode)
-            Modes.NO_MODE -> throw Exception("Error in factory, No mode")
+            Modes.NO_MODE -> throw IllegalModeException(Modes.NO_MODE,"AnimalFactory.createAnimal")
         }
 
 

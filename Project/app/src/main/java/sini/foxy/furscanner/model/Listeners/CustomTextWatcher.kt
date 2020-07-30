@@ -1,4 +1,4 @@
-package sini.foxy.furscanner
+package sini.foxy.furscanner.model.Listeners
 
 import android.text.Editable
 import android.text.TextWatcher

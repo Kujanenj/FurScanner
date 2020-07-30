@@ -1,6 +1,7 @@
 package sini.foxy.furscanner.model
 
 
+import sini.foxy.furscanner.Exception.IllegalAnimalException
 import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.animals.AbstractAnimal
 import sini.foxy.furscanner.animals.BreedingAbstractAnimal
@@ -27,9 +28,17 @@ class DataBaseManager(sessionNumber: String, dateTime: DateTime) {
 
         var indexOfAddedAnimal = -1
         when(abstractAnimal.mode){
-            Modes.BREED -> indexOfAddedAnimal=database.addBreedAnimal(abstractAnimal as BreedingAbstractAnimal)} //TODO: casting might not be safe for all types
+            Modes.BREED -> try {
+                indexOfAddedAnimal=database.addBreedAnimal(abstractAnimal as BreedingAbstractAnimal)//TODO: casting might not be safe for all types
+            }
+            catch (illegalAnimalException : IllegalAnimalException){
+                println(illegalAnimalException.what)
+                println(illegalAnimalException.where)
+                indexOfAddedAnimal = -1 //invalid index is -1
+            }
+        }
         println(indexOfAddedAnimal)
-             //TODO: Make your own execption class goddamnit
+
         return indexOfAddedAnimal
         }
 

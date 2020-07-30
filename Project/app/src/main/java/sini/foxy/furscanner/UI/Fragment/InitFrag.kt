@@ -2,16 +2,13 @@ package sini.foxy.furscanner.UI.Fragment
 
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import belka.us.androidtoggleswitch.widgets.BaseToggleSwitch
 import belka.us.androidtoggleswitch.widgets.ToggleSwitch
-import sini.foxy.furscanner.CustomTextWatcher
+import sini.foxy.furscanner.model.Listeners.CustomTextWatcher
 
 import sini.foxy.furscanner.R
 
