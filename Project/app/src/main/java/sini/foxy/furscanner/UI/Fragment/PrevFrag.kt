@@ -12,12 +12,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import sini.foxy.furscanner.R
 import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
 import sini.foxy.furscanner.animals.AbstractAnimal
+import java.lang.Exception
 
 /**
  *  Shows the previous scan results
@@ -87,7 +89,13 @@ class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-            animalToModify.getLocation().house=(houseLabelLower.text.toString()).toInt()
+                // Tests that editText label isn't empty
+                try {
+                    animalToModify.getLocation().house=(houseLabelLower.text.toString()).toInt()
+                }
+                catch (error : Exception) {
+                    println(error)
+                }
                 notifyAdapter(indexOfAnimalToModify)
             }
         })
@@ -101,7 +109,13 @@ class PrevFrag(var dataList : List<AbstractAnimal>) : AbstractPasserFragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                animalToModify.getLocation().cage=(cageLabelLower.text.toString().toInt())
+                // Tests that editText label isn't empty
+                try {
+                    animalToModify.getLocation().cage=(cageLabelLower.text.toString().toInt())
+                }
+                catch (error : Exception) {
+                    println(error)
+                }
                 notifyAdapter(indexOfAnimalToModify)
             }
         })
