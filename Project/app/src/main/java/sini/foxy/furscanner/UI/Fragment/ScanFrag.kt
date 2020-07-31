@@ -3,6 +3,8 @@ package sini.foxy.furscanner.UI.Fragment
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.media.AudioManager
+import android.media.ToneGenerator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +25,8 @@ import sini.foxy.furscanner.R
  * Contains the Camera Scanner
  */
 class ScanFrag : AbstractPasserFragment() {
+    val  toneGen = ToneGenerator(AudioManager.STREAM_MUSIC,100)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,14 +47,16 @@ class ScanFrag : AbstractPasserFragment() {
     }
     fun scanFromFragment() {
         val intent = IntentIntegrator.forSupportFragment(this)
-        intent.setBeepEnabled(true)
+
         barcodeViewFrag.initializeFromIntent(intent.createScanIntent())
         barcodeViewFrag.decodeContinuous(object: BarcodeCallback {
             override fun barcodeResult(result: BarcodeResult?) {
                 result?.let {
-                    println("Trying to handle results")
                     try {
+                        //TODO: fucking make a timer here plox VEX
                             passData("bar",it.toString())
+
+                        toneGen.startTone(ToneGenerator.TONE_CDMA_PIP,150)
                     }
                     catch (error : Exception){
                         println(error)
