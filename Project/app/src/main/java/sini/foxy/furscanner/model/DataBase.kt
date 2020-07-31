@@ -30,8 +30,8 @@ class DataBase {
     private var currentLocation = testLocation
 
     fun modifyLocation(incrementation : Int){
-        println("Current controller location is " + currentLocation.getLocationData())
         currentLocation.cage += incrementation
+        println("Current controller location is " + currentLocation.getLocationData())
     }
     fun modifyLocation(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
         currentLocation.house=houseP
@@ -42,7 +42,14 @@ class DataBase {
     fun modifyLocation(newLocation : sini.foxy.furscanner.Location){
         currentLocation=newLocation
     }
+    fun modifyLocation(key : String, value : String){
+        when(key){
+            "house" -> currentLocation.house=value.toInt()
+            "cage" -> currentLocation.cage=value.toInt()
+            "incA" -> currentLocation.incAmount=value.toInt()
+        }
 
+    }
     fun modifyXMLDataMap(key: String, value : String){ //Todo: This function is useless?
         xmlDataMap[key]=value
     }

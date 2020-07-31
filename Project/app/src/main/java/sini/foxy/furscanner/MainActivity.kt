@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), OnDataPass{
         val testTabLayout = findViewById<TabLayout>(R.id.tabs_main)
         val testViewPager = findViewById<ViewPager>(R.id.viewpager_main)
         val fragmentAdapter =
-            MyPagerAdapter(supportFragmentManager,controller.dataBaseManager.getContainer(Modes.BREED))
+            MyPagerAdapter(supportFragmentManager,controller.dataBaseManager)
         testViewPager.adapter = fragmentAdapter
         testTabLayout.setupWithViewPager(testViewPager)
 

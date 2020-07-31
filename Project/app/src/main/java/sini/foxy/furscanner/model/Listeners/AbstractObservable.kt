@@ -3,8 +3,8 @@ package sini.foxy.furscanner.model.Listeners
 import java.lang.Exception
 
 abstract class AbstractObservable() {
-    private var registeredObserves  = mutableListOf<AbstractObserver>()
-    fun addObserver(observer : AbstractObserver){
+    private var registeredObserves  = mutableListOf<InterfaceObserver>()
+    fun addObserver(observer : InterfaceObserver){
         if(!registeredObserves.contains(observer)){
             registeredObserves.add(observer)
         }
@@ -12,7 +12,7 @@ abstract class AbstractObservable() {
             throw Exception("Observer already contained in list") //Todo: Better type of exception?
         }
     }
-    fun removeObserver(observer: AbstractObserver){
+    fun removeObserver(observer: InterfaceObserver){
         registeredObserves.remove(observer) //Todo: Safety Checks?
     }
 

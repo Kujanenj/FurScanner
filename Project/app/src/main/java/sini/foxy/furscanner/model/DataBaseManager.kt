@@ -53,14 +53,20 @@ class DataBaseManager(sessionNumber: String, dateTime: DateTime)  : AbstractObse
 
     fun modifyLocation(incrementation : Int){
      database.modifyLocation(incrementation)
+        updateObservers()
     }
     fun modifyLocation(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
         database.modifyLocation(houseP,cageP,incDirP,incAmountP)
+        updateObservers()
     }
     fun modifyLocation(newLocation : sini.foxy.furscanner.Location){
         database.modifyLocation(newLocation)
+        updateObservers()
     }
-
+    fun modifyLocation(key : String , value : String){
+        database.modifyLocation(key,value)
+       // updateObservers()
+    }
     fun modifyDataBase(key: String, value : String){ //Modifies XML database
         try {
         database.modifyXMLDataMap(key,value)

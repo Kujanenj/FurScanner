@@ -24,9 +24,9 @@ class Controller : OnDataPass {
            if(data.second!=""){
                 when(data.first){
                    "bar" -> handleBarcodeResult(data.second)
-                   "house" -> dataBaseManager.getLocation().house=data.second.toInt()
-                   "cage" -> dataBaseManager.getLocation().cage=data.second.toInt()
-                   "incA" -> dataBaseManager.getLocation().incAmount=data.second.toInt()
+                   "house" -> dataBaseManager.modifyLocation("house",data.second)
+                   "cage" -> dataBaseManager.modifyLocation("cage",data.second)
+                   "incA" -> dataBaseManager.modifyLocation("cage",data.second)
                    "incD" -> dataBaseManager.getLocation().incDir = data.second
                     "test"->populateDataBase()
        }
@@ -112,10 +112,8 @@ class Controller : OnDataPass {
          handleBarcodeResult(randomGenerator.getRandomFurBarcode())
     }
 
-        println("-----")
-        for (animal in dataBaseManager.getContainer(Modes.BREED)){
-            println(animal.getIDPair())
-        }
+
+
     }
 
 
