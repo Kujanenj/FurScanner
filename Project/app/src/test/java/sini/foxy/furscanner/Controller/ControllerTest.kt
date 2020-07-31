@@ -9,10 +9,6 @@ import sini.foxy.furscanner.testLocation
 
 class ControllerTest {
 
-    init {
-        testController.modifyLocation(testLocation)
-    }
-
     @Test
     fun testHandleBarcode(){
        testController.onDataPass(Pair("bar", testBarcodeResult1))

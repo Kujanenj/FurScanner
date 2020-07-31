@@ -1,8 +1,10 @@
 package sini.foxy.furscanner.model
 
 
+import android.location.Location
 import sini.foxy.furscanner.Exception.IllegalAnimalException
 import sini.foxy.furscanner.animals.BreedingAbstractAnimal
+import sini.foxy.furscanner.testLocation
 
 class DataBase {
 
@@ -20,6 +22,23 @@ class DataBase {
     )
 
     private val breedContainerList = mutableListOf<BreedingAbstractAnimal>()
+
+    private var currentLocation = testLocation
+
+    fun modifyLocation(incrementation : Int){
+        println("Current controller location is " + currentLocation.getLocationData())
+        currentLocation.cage += incrementation
+    }
+    fun modifyLocation(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
+        currentLocation.house=houseP
+        currentLocation.cage=cageP
+        currentLocation.incDir=incDirP
+        currentLocation.incAmount=incAmountP
+    }
+    fun modifyLocation(newLocation : sini.foxy.furscanner.Location){
+        currentLocation=newLocation
+    }
+
     fun modifyXMLDataMap(key: String, value : String){ //Todo: This function is useless?
         xmlDataMap[key]=value
     }
@@ -41,6 +60,7 @@ class DataBase {
     }
     fun getXMLDataMap() = xmlDataMap
     fun getBreedContainer() = breedContainerList
+    fun getCurrentLocation() = currentLocation
 }
 
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import belka.us.androidtoggleswitch.widgets.BaseToggleSwitch
 import belka.us.androidtoggleswitch.widgets.ToggleSwitch
+import sini.foxy.furscanner.Location
 import sini.foxy.furscanner.model.Listeners.CustomTextWatcher
 
 import sini.foxy.furscanner.R
@@ -15,13 +16,7 @@ import sini.foxy.furscanner.R
 /**
  * Fragement for setting up initial state of scanning
  */
-class InitFrag :  AbstractPasserFragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        println("ASDASD")
-    }
-
+class InitFrag() :  AbstractPasserFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

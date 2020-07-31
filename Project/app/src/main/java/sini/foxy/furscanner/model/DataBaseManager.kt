@@ -5,26 +5,29 @@ import sini.foxy.furscanner.Exception.IllegalAnimalException
 import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.animals.AbstractAnimal
 import sini.foxy.furscanner.animals.BreedingAbstractAnimal
+import sini.foxy.furscanner.model.Listeners.AbstractObservable
 import java.lang.Exception
 
-
+//TODO: This class is fucking shit. Make a better one before spaghetti is born!
 /**
  * DataBaseManager is used when interacting with the actual database.
  */
-class DataBaseManager(sessionNumber: String, dateTime: DateTime) {
+class DataBaseManager(sessionNumber: String, dateTime: DateTime)  : AbstractObservable(){
 
     private var database = DataBase()
     private var dateTime = dateTime //Todo: Should database have access to this?
     init { //TODO: try catch?
         database.generateXMLDataMap(sessionNumber,dateTime)
     }
+    //TODO: Holy fuck remove this
     fun getDataBase( )=database
-
+    fun getLocation() = database.getCurrentLocation()
     //Todo: Add a way to delete animals?
     /*!
     Adds the given animal to correct database based on the mode of the animal. Returns the index of the added animal
      */
     fun modifyDataBase(abstractAnimal : AbstractAnimal): Int{
+
 
         var indexOfAddedAnimal = -1
         when(abstractAnimal.mode){
@@ -42,7 +45,15 @@ class DataBaseManager(sessionNumber: String, dateTime: DateTime) {
         return indexOfAddedAnimal
         }
 
-
+    fun modifyLocation(incrementation : Int){
+     database.modifyLocation(incrementation)
+    }
+    fun modifyLocation(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
+        database.modifyLocation(houseP,cageP,incDirP,incAmountP)
+    }
+    fun modifyLocation(newLocation : sini.foxy.furscanner.Location){
+        database.modifyLocation(newLocation)
+    }
 
     fun modifyDataBase(key: String, value : String){ //Modifies XML database
         try {

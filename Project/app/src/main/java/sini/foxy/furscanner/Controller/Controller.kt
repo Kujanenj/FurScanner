@@ -18,17 +18,16 @@ class Controller : OnDataPass {
     private val parser = BarcodeParser()
     private val dateTime  = DateTime()
     val dataBaseManager = DataBaseManager("TEST SESSION",dateTime)
-    private var currentLocation = testLocation
     private lateinit var adapter : CustomRecyclerAdapter
 
     override fun onDataPass(data: Pair<String, String>) {
            if(data.second!=""){
                 when(data.first){
                    "bar" -> handleBarcodeResult(data.second)
-                   "house" -> currentLocation.house=data.second.toInt()
-                   "cage" -> currentLocation.cage=data.second.toInt()
-                   "incA" -> currentLocation.incAmount=data.second.toInt()
-                   "incD" -> currentLocation.incDir = data.second
+                   "house" -> dataBaseManager.getLocation().house=data.second.toInt()
+                   "cage" -> dataBaseManager.getLocation().cage=data.second.toInt()
+                   "incA" -> dataBaseManager.getLocation().incAmount=data.second.toInt()
+                   "incD" -> dataBaseManager.getLocation().incDir = data.second
                     "test"->populateDataBase()
        }
            }
@@ -62,9 +61,9 @@ class Controller : OnDataPass {
             Modes.BREED ->{
             try {
                indexOfAddedAnimal=dataBaseManager.modifyDataBase(AnimalFactory.createAnimal(currentMode,
-                   parser.parseBarcode(scanResult),LocationFactory.createLocation(currentLocation.getLocationData())))
+                   parser.parseBarcode(scanResult),LocationFactory.createLocation(dataBaseManager.getLocation().getLocationData())))
                    if(indexOfAddedAnimal!=-1){
-                        modifyLocation(currentLocation.incAmount)
+                        dataBaseManager.modifyLocation(dataBaseManager.getLocation().incAmount)
                         adapter.notifyItemInserted(indexOfAddedAnimal)
                 }
             }
@@ -91,7 +90,7 @@ class Controller : OnDataPass {
 
     }
 
-    fun modifyLocation(incrementation : Int){
+  /*  fun modifyLocation(incrementation : Int){
         println("Current controller location is " + currentLocation.getLocationData())
         currentLocation.cage += incrementation
     }
@@ -104,6 +103,8 @@ class Controller : OnDataPass {
     fun modifyLocation(newLocation : Location){
         currentLocation=newLocation
     }
+
+   */
     fun populateDataBase(){
 
         val randomGenerator = RandomGenerator()
