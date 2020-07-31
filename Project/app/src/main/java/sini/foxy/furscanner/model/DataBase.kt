@@ -3,8 +3,12 @@ package sini.foxy.furscanner.model
 
 import android.location.Location
 import sini.foxy.furscanner.Exception.IllegalAnimalException
+import sini.foxy.furscanner.Exception.IllegalModeException
+import sini.foxy.furscanner.Modes
+import sini.foxy.furscanner.animals.AbstractAnimal
 import sini.foxy.furscanner.animals.BreedingAbstractAnimal
 import sini.foxy.furscanner.testLocation
+import java.lang.Exception
 
 class DataBase {
 
@@ -58,8 +62,15 @@ class DataBase {
         println("Added breeding animal, " + animalToAdd.getIDPair() + ", \n with location of : " + animalToAdd.getLocation().getLocationData())
         return breedContainerList.size
     }
+    fun getContainer(type : Modes) : MutableList<AbstractAnimal>{
+        when(type){
+
+            Modes.BREED -> return breedContainerList as MutableList<AbstractAnimal>
+        }
+        throw IllegalModeException(type,"Database.getContainer")
+    }
     fun getXMLDataMap() = xmlDataMap
-    fun getBreedContainer() = breedContainerList
+   // fun getBreedContainer() = breedContainerList
     fun getCurrentLocation() = currentLocation
 }
 

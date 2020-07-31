@@ -3,14 +3,16 @@ package sini.foxy.furscanner.XML
 
 import org.redundent.kotlin.xml.PrintOptions
 import org.redundent.kotlin.xml.xml
+import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.model.DataBase
+import sini.foxy.furscanner.model.DataBaseManager
 
 class XMLStringFormer() {
 
-    fun makeXML(dataBase: DataBase) : String{
+    fun makeXML(dataBaseManager: DataBaseManager) : String{
         println("Forming XML string")
-        println(dataBase.getBreedContainer().size)
-       val generalData = dataBase.getXMLDataMap()
+        println(dataBaseManager.getContainer(Modes.BREED).size)
+       val generalData = dataBaseManager.getXMLData()
 
         val AppInfoTop = xml("Session"){
             globalProcessingInstruction("xml","version" to "1.0")
@@ -57,7 +59,7 @@ class XMLStringFormer() {
             }
             "BreedingAnimals" {
 
-                for (animal in dataBase.getBreedContainer()){
+                for (animal in dataBaseManager.getContainer(Modes.BREED)){
 
                     "BreedingAnimal"{
                         "AnimalId"{

@@ -158,6 +158,6 @@ class XMLStringFormerTest {
                 "  <WizardLaps />\n" +
                 "  <ApplicationErrors />\n" +
                 "  <IsDeserializing>false</IsDeserializing>\n" +
-                "</Session>",testXMLFormer.makeXML(getPopulatedDataBaseManager(4,Modes.BREED).getDataBase()))
+                "</Session>",testXMLFormer.makeXML(getPopulatedDataBaseManager(4,Modes.BREED)))
     }
 }

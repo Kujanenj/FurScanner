@@ -20,8 +20,14 @@ class DataBaseManager(sessionNumber: String, dateTime: DateTime)  : AbstractObse
         database.generateXMLDataMap(sessionNumber,dateTime)
     }
     //TODO: Holy fuck remove this
-    fun getDataBase( )=database
+  //  fun getDataBase( )=database
     fun getLocation() = database.getCurrentLocation()
+    fun getContainer(type : Modes) : MutableList<AbstractAnimal>{
+        return database.getContainer(type)
+    }
+    fun getXMLData(): MutableMap<String,String>{
+        return database.getXMLDataMap()
+    }
     //Todo: Add a way to delete animals?
     /*!
     Adds the given animal to correct database based on the mode of the animal. Returns the index of the added animal

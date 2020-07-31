@@ -11,7 +11,7 @@ class FileWriterTest {
         val fileWriter = FileWriterConcrete()
 
             fileWriter.writeFile("../../FinalExamples/UTestResult/testi.xml",testXMLFormer.makeXML(getPopulatedDataBaseManager(4,
-                Modes.BREED).getDataBase()))
+                Modes.BREED)))
 
     }
 }

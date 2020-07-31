@@ -7,9 +7,10 @@ import sini.foxy.furscanner.IdPair
 import sini.foxy.furscanner.UI.Fragment.InitFrag
 import sini.foxy.furscanner.UI.Fragment.PrevFrag
 import sini.foxy.furscanner.UI.Fragment.ScanFrag
+import sini.foxy.furscanner.animals.AbstractAnimal
 import sini.foxy.furscanner.model.DataBase
 
-class MyPagerAdapter (fragManager: FragmentManager,val dataBase : DataBase) : FragmentPagerAdapter(fragManager) {
+class MyPagerAdapter (fragManager: FragmentManager,val breedList : MutableList<AbstractAnimal>) : FragmentPagerAdapter(fragManager) {
     private val tabAmount : Int= 3
     override fun getItem(position: Int): Fragment {
         return when (position) {
@@ -18,7 +19,7 @@ class MyPagerAdapter (fragManager: FragmentManager,val dataBase : DataBase) : Fr
             }
             1 -> ScanFrag()
             else -> {
-                return PrevFrag(dataBase.getBreedContainer())
+                return PrevFrag(breedList)
             }
         }
     }

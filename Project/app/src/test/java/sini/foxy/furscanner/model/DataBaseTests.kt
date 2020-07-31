@@ -31,19 +31,19 @@ class DataBaseTests {
 
     @Test
     fun testRandomDataBase10(){
-        Assert.assertEquals(10, getPopulatedDataBaseManager(10,Modes.BREED).getDataBase().getBreedContainer().size)
+        Assert.assertEquals(10, getPopulatedDataBaseManager(10,Modes.BREED).getContainer(Modes.BREED).size)
     }
     @Test
     fun testRandomDataBase100(){
-        Assert.assertEquals(100, getPopulatedDataBaseManager(100,Modes.BREED).getDataBase().getBreedContainer().size)
+        Assert.assertEquals(100, getPopulatedDataBaseManager(100,Modes.BREED).getContainer(Modes.BREED).size)
     }
     @Test
     fun testRandomDataBase1000(){
-        Assert.assertEquals(1000, getPopulatedDataBaseManager(1000,Modes.BREED).getDataBase().getBreedContainer().size)
+        Assert.assertEquals(1000, getPopulatedDataBaseManager(1000,Modes.BREED).getContainer(Modes.BREED).size)
     }
     @Test
     fun testRandomDataBase10000(){
-        Assert.assertEquals(10000, getPopulatedDataBaseManager(10000,Modes.BREED).getDataBase().getBreedContainer().size)
+        Assert.assertEquals(10000, getPopulatedDataBaseManager(10000,Modes.BREED).getContainer(Modes.BREED).size)
     }
 
 }

@@ -113,7 +113,7 @@ class Controller : OnDataPass {
     }
 
         println("-----")
-        for (animal in dataBaseManager.getDataBase().getBreedContainer()){
+        for (animal in dataBaseManager.getContainer(Modes.BREED)){
             println(animal.getIDPair())
         }
     }
