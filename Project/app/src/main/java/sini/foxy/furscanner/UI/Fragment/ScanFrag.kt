@@ -20,12 +20,14 @@ import com.journeyapps.barcodescanner.BarcodeResult
 import kotlinx.android.synthetic.main.fragment_scan.*
 import org.w3c.dom.Text
 import sini.foxy.furscanner.R
+import java.util.*
 
 /**
  * Contains the Camera Scanner
  */
 class ScanFrag : AbstractPasserFragment() {
     val  toneGen = ToneGenerator(AudioManager.STREAM_MUSIC,100)
+    var  scanTimeout = false
 
 
     override fun onCreateView(
@@ -51,16 +53,24 @@ class ScanFrag : AbstractPasserFragment() {
         barcodeViewFrag.initializeFromIntent(intent.createScanIntent())
         barcodeViewFrag.decodeContinuous(object: BarcodeCallback {
             override fun barcodeResult(result: BarcodeResult?) {
-                result?.let {
-                    try {
-                        //TODO: fucking make a timer here plox VEX
-                            passData("bar",it.toString())
+                if(!scanTimeout) {
+                    scanTimeout=true
+                    result?.let {
+                        try {
+                            Timer().schedule(object : TimerTask(){
+                                override fun run() {
+                                   scanTimeout  = false
+                                }
+                            },5000) //5000ms = 5 sec
 
-                        toneGen.startTone(ToneGenerator.TONE_CDMA_PIP,150)
-                    }
-                    catch (error : Exception){
-                        println(error)
-                        return
+                            passData("bar", it.toString())
+
+                            toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 150)
+
+                        } catch (error: Exception) {
+                            println(error)
+                            scanTimeout=false
+                        }
                     }
                 }
             }
