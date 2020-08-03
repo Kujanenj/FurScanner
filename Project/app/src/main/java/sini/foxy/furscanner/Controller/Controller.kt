@@ -1,9 +1,14 @@
 package sini.foxy.furscanner.Controller
 
+import android.app.Application
+import android.content.Context
+import sini.foxy.furscanner.Exception.FurScannerException
+import sini.foxy.furscanner.Exception.IllegalModeException
 import sini.foxy.furscanner.Location
 import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.OnDataPass
 import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
+import sini.foxy.furscanner.XML.XMLStringFormer
 import sini.foxy.furscanner.animals.AnimalFactory
 import sini.foxy.furscanner.model.*
 import sini.foxy.furscanner.testLocation
@@ -14,20 +19,29 @@ The Controller class is used to control the logic of the App.
  */
 class Controller : OnDataPass {
 
-
+    private lateinit var context : Context
     private val parser = BarcodeParser()
     private val dateTime  = DateTime()
     val dataBaseManager = DataBaseManager("TEST SESSION",dateTime)
+    private val xmlStringFormer = XMLStringFormer()
+    private val fileWriter : FileWriterInterface = FileWriterConcrete()
     private lateinit var adapter : CustomRecyclerAdapter
-
+    private var currentMode : Modes = Modes.BREED
     override fun onDataPass(data: Pair<String, String>) {
            if(data.second!=""){
                 when(data.first){
+
                    "bar" -> handleBarcodeResult(data.second)
                    "house" -> dataBaseManager.modifyLocation("house",data.second)
                    "cage" -> dataBaseManager.modifyLocation("cage",data.second)
                    "incA" -> dataBaseManager.modifyLocation("cage",data.second)
                    "incD" -> dataBaseManager.getLocation().incDir = data.second
+                    "doneButton"->
+                        fileWriter.writeFile(
+                            context.filesDir.toString() +
+                                    "testFile.txt", xmlStringFormer.makeXML(dataBaseManager)
+                        )
+
                     "test"->populateDataBase()
        }
            }
@@ -37,9 +51,9 @@ class Controller : OnDataPass {
         setAdapter(adapter)
     }
 
-    private var currentMode : Modes =
-        Modes.BREED
-
+    fun setContext(newContext : Context){
+        context=newContext
+    }
      fun setMode(newMode : Modes) : Boolean{
 
         try {
@@ -56,6 +70,7 @@ class Controller : OnDataPass {
 
 
         var indexOfAddedAnimal = -1
+
         when(currentMode){
             Modes.NO_MODE -> throw Exception("No mode was selected!")
             Modes.BREED ->{
@@ -67,8 +82,8 @@ class Controller : OnDataPass {
                         adapter.notifyItemInserted(indexOfAddedAnimal)
                 }
             }
-            catch (error : Exception){
-                println(error)
+            catch (error : FurScannerException){
+                println(error.what+error.where)
             }
         }
             else -> throw Exception("Illegal mode")
@@ -80,31 +95,7 @@ class Controller : OnDataPass {
         println("Setting adapter")
         adapter=newAdapter
     }
-    private fun handleDatBaseChange(indexOfAddedAnimal : Int){
-    try {
 
-    }
-    catch (error : Exception){
-        println(error)
-    }
-
-    }
-
-  /*  fun modifyLocation(incrementation : Int){
-        println("Current controller location is " + currentLocation.getLocationData())
-        currentLocation.cage += incrementation
-    }
-    fun modifyLocation(houseP : Int, cageP : Int, incDirP : String, incAmountP : Int){
-            currentLocation.house=houseP
-            currentLocation.cage=cageP
-            currentLocation.incDir=incDirP
-            currentLocation.incAmount=incAmountP
-    }
-    fun modifyLocation(newLocation : Location){
-        currentLocation=newLocation
-    }
-
-   */
     fun populateDataBase(){
 
         val randomGenerator = RandomGenerator()

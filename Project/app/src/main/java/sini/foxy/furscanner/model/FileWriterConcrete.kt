@@ -1,5 +1,6 @@
 package sini.foxy.furscanner.model
 
+import android.content.Context
 import java.io.File
 import java.lang.Exception
 
@@ -12,9 +13,11 @@ class FileWriterConcrete : FileWriterInterface {
     }
 
     override fun writeFile(filePath: String?, contents: String) {
+
+        println(filePath)
         initFile(filePath)
         wFile.writeText(contents)
-        println("Wrote some stuff")
+        println("Wrote some stuff to filepath; $filePath")
 
     }
     private fun initFile(filePath: String?){
@@ -23,5 +26,10 @@ class FileWriterConcrete : FileWriterInterface {
         }
         wFile = File(filePath) //TODO, this might not work
         wFile.createNewFile() // TODO, this too :/
+    }
+
+    override fun readTestFile(filePath: String?) {
+        val rFile = File(filePath)
+        println(rFile.readLines())
     }
 }

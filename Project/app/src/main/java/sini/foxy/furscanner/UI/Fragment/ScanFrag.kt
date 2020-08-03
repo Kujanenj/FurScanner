@@ -70,6 +70,7 @@ class ScanFrag : AbstractPasserFragment() {
                         } catch (error: Exception) {
                             println(error)
                             scanTimeout=false
+
                         }
                     }
                 }

@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(), OnDataPass{
 
 
         super.onCreate(savedInstanceState)
+        controller.setContext(this)
         setContentView(R.layout.activity_main)
 
         val testTabLayout = findViewById<TabLayout>(R.id.tabs_main)
