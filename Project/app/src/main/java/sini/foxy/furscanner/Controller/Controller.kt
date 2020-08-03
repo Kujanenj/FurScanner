@@ -39,7 +39,7 @@ class Controller : OnDataPass {
                     "doneButton"->
                         fileWriter.writeFile(
                             context.filesDir.toString() +
-                                    "testFile.txt", xmlStringFormer.makeXML(dataBaseManager)
+                                    "/TEST SESSION.xml", xmlStringFormer.makeXML(dataBaseManager)
                         )
 
                     "test"->populateDataBase()
