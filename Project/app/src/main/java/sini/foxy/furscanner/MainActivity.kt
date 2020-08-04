@@ -54,9 +54,10 @@ class MainActivity : AppCompatActivity(), OnDataPass{
         testViewPager.adapter = fragmentAdapter
         testTabLayout.setupWithViewPager(testViewPager)
 
-        val navController =
+
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
-      //  setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         drawer = findViewById(R.id.drawer_layout)
 
         toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
