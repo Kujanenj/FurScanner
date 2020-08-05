@@ -11,47 +11,46 @@ class XMLStringFormer() {
 
     fun makeXML(dataBaseManager: DataBaseManager) : String{
         println("Forming XML string")
-        println(dataBaseManager.getContainer(Modes.BREED).size)
-       val generalData = dataBaseManager.getXMLData()
+
 
         val AppInfoTop = xml("Session"){
             globalProcessingInstruction("xml","version" to "1.0")
-            attributes(Pair("xmlns:xsd","http://www.w3.org/2001/XMLSchema"),Pair("xmlns:xsi","http://www.w3.org/2001/XMLSchema-instance"))
+            attributes(Pair("xmlns:xsi","http://www.w3.org/2001/XMLSchema-instance"),Pair("xmlns:xsd","http://www.w3.org/2001/XMLSchema"))
             "ApplicationVersion"{
                 -""
             }
             "Number"{
-                -generalData["SESSION_NUMBER"]!!
+                -dataBaseManager.getXMLData()["SESSION_NUMBER"]!!
             }
             "Created"{
-                -generalData["DATE"]!!
+                -dataBaseManager.getDateTime()
             }
             "Modified"{
-                -generalData["DATE"]!!
+                -dataBaseManager.getDateTime()
             }
             "HasChanges"{
-                -generalData["HAS_CHANGES"]!!
+                -dataBaseManager.getXMLData()["HAS_CHANGES"]!!
             }
             "CurrentlyUsedGradingValues"{
             }
             "GenderReset"{
-                -generalData["GENDER_RESET"]!!
+                -dataBaseManager.getXMLData()["GENDER_RESET"]!!
             }
             "CurrentGender"   {
-                -generalData["CURRENT_GENDER"]!!
+                -dataBaseManager.getXMLData()["CURRENT_GENDER"]!!
             }
             "CurrentLocation"{
                     "HouseNumber"{
-                        -""
+                        -dataBaseManager.getLocation().house.toString()
                     }
                     "CageNumber"{
-                        -""
+                        -dataBaseManager.getLocation().cage.toString()
                     }
                     "IncrementDirection"{
-                        -""
+                        -dataBaseManager.getLocation().incDir
                     }
                     "IncrementAmount"{
-                        -""
+                        -dataBaseManager.getLocation().incAmount.toString()
                     }
             }
             "AnimalGradings" {
@@ -124,34 +123,34 @@ class XMLStringFormer() {
                 }
             }
             "LastSavedPairingDate"{
-                -"PairingDate"
+                -dataBaseManager.getDateTime()
             }
             "LastSavedPairingMethod"{
-                -""
+                -"Pairing"
             }
             "Pairings"{
 
             }
             "LastSavedWhelpingDate"{
-                -"whelpDate"
+                -dataBaseManager.getDateTime()
             }
             "LastSavedWhelpingMethod"{
-                -"whelpMethod"
+                -"Normal"
             }
             "Whelpings"{
 
             }
             "RunningTotalCount"{
-                -"RunningTotalCount"
+                -"0"
             }
             "RunningNumberOfTheCount"{
-                -"RunningSomething"
+                -"0"
             }
             "RunningMaleCount"{
-                -"DataHerePlease"
+                -"0"
             }
             "RunningFemaleCount"{
-                -"SomeMOreDataForMe"
+                -"0"
             }
             "LitterCounts"{
 
@@ -166,13 +165,13 @@ class XMLStringFormer() {
 
             }
             "LastSavedFirstPairingDate"{
-                -""
+                -dataBaseManager.getDateTime()
             }
             "LastSavedSecondPairingDate"{
-                -""
+                -dataBaseManager.getDateTime()
             }
             "LastSavedThirdPairingDate"{
-                -""
+                -dataBaseManager.getDateTime()
             }
             "WizardLaps"{
 

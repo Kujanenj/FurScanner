@@ -15,13 +15,14 @@ import java.lang.Exception
 class DataBaseManager(sessionNumber: String, dateTime: DateTime)  : AbstractObservable(){
 
     private var database = DataBase()
-    private var dateTime = dateTime //Todo: Should database have access to this?
+
     init { //TODO: try catch?
         database.generateXMLDataMap(sessionNumber,dateTime)
     }
     //TODO: Holy fuck remove this
   //  fun getDataBase( )=database
     fun getLocation() = database.getCurrentLocation()
+    fun getDateTime() = database.getDateTime()
     fun getContainer(type : Modes) : MutableList<AbstractAnimal>{
         return database.getContainer(type)
     }
@@ -45,7 +46,7 @@ class DataBaseManager(sessionNumber: String, dateTime: DateTime)  : AbstractObse
                 indexOfAddedAnimal = -1 //invalid index is -1
             }
         }
-        println(indexOfAddedAnimal)
+
 
         return indexOfAddedAnimal
         }

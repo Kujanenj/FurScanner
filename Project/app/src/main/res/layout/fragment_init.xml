@@ -124,6 +124,6 @@
             app:layout_constraintEnd_toEndOf="@+id/switchButton"
             app:layout_constraintStart_toStartOf="@+id/switchButton" />
 
-      
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
