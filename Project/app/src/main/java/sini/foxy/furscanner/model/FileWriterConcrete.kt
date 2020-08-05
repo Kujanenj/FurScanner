@@ -1,6 +1,7 @@
 package sini.foxy.furscanner.model
 
 import android.content.Context
+import sini.foxy.furscanner.Exception.FurScannerException
 import java.io.File
 import java.lang.Exception
 
@@ -14,15 +15,17 @@ class FileWriterConcrete : FileWriterInterface {
 
     override fun writeFile(filePath: String?, contents: String) {
 
+
         println(filePath)
         initFile(filePath)
         wFile.writeText(contents)
         println("Wrote some stuff to filepath; $filePath")
 
+
     }
     private fun initFile(filePath: String?){
         if(filePath==null){
-            throw Exception("Error in WRITE FILE, filepath")
+            throw FurScannerException("FilePath was not proper","FileWriter.initFile")
         }
         wFile = File(filePath) //TODO, this might not work
         wFile.createNewFile() // TODO, this too :/

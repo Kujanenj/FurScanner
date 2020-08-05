@@ -26,7 +26,6 @@ class InitFrag(override var observable : AbstractObservable) :  AbstractPasserFr
     private lateinit var cageTextEditor : EditText
     private lateinit var incrementTextEditor : EditText
     private lateinit var directionSwitch : ToggleSwitch
-    private lateinit var doneButton : Button
     private var dontModifyFlag = false
     var dataBase = observable as DataBaseManager
     override fun onUpdate() {
@@ -91,10 +90,7 @@ class InitFrag(override var observable : AbstractObservable) :  AbstractPasserFr
                passData("incD",directionSwitch.checkedTogglePosition.toString())
             }
         })
-        doneButton = view.findViewById(R.id.doneButton)
-        doneButton.setOnClickListener{
-            passData("doneButton","noDataHere")
-        }
+
        return view
     }
 

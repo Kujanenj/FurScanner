@@ -41,8 +41,7 @@ class DataBaseManager(sessionNumber: String, dateTime: DateTime)  : AbstractObse
                 indexOfAddedAnimal=database.addBreedAnimal(abstractAnimal as BreedingAbstractAnimal)//TODO: casting might not be safe for all types
             }
             catch (illegalAnimalException : IllegalAnimalException){
-                println(illegalAnimalException.what)
-                println(illegalAnimalException.where)
+              illegalAnimalException.print()
                 indexOfAddedAnimal = -1 //invalid index is -1
             }
         }

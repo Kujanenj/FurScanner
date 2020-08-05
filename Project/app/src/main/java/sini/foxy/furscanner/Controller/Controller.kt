@@ -36,7 +36,7 @@ class Controller : OnDataPass {
                    "cage" -> dataBaseManager.modifyLocation("cage",data.second)
                    "incA" -> dataBaseManager.modifyLocation("cage",data.second)
                    "incD" -> dataBaseManager.getLocation().incDir = data.second
-                    "doneButton"->
+                    "export"->
                         fileWriter.writeFile(
                             context.filesDir.toString() +
                                     "/TEST SESSION.xml", xmlStringFormer.makeXML(dataBaseManager)
@@ -83,7 +83,7 @@ class Controller : OnDataPass {
                 }
             }
             catch (error : FurScannerException){
-                println(error.what+error.where)
+                error.print()
             }
         }
             else -> throw Exception("Illegal mode")

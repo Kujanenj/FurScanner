@@ -7,6 +7,7 @@ import android.os.PersistableBundle
 import android.util.AttributeSet
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 
 import androidx.appcompat.app.ActionBarDrawerToggle
 
@@ -14,17 +15,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import sini.foxy.furscanner.Controller.Controller
+import sini.foxy.furscanner.Exception.FurScannerException
 import sini.foxy.furscanner.UI.Adapter.CustomRecyclerAdapter
 
 import sini.foxy.furscanner.UI.Adapter.MyPagerAdapter
 import sini.foxy.furscanner.model.RandomGenerator
 
 
-//TODO : replace all test stuff with actual implementations
-//DESKTOP-06IBLMI
-class MainActivity : AppCompatActivity(), OnDataPass{
+//TODO : Make this breed activity?
+
+class MainActivity : AppCompatActivity(), OnDataPass, NavigationView.OnNavigationItemSelectedListener{
 
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
@@ -64,6 +67,23 @@ class MainActivity : AppCompatActivity(), OnDataPass{
         drawer.addDrawerListener(toggle)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
+        val navigationView: NavigationView = findViewById(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener(this)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        try {
+
+        when(item.itemId){
+            R.id.nav_item_breed -> controller.setMode(Modes.BREED) //TODO: Change activity to breed?
+            R.id.nav_item_export ->{ onDataPass(Pair("export"," "))
+            Toast.makeText(this,"Imported xml file!",Toast.LENGTH_LONG).show()}
+        }
+        }
+        catch (error : FurScannerException){
+            error.print()
+        }
+        return true
     }
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)

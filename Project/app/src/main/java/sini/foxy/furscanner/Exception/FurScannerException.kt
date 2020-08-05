@@ -5,4 +5,7 @@ import java.lang.Exception
 open class FurScannerException(val what : String, val where : String) : Exception() {
     fun what() = what
     fun where() = where
+    fun print(){
+        println("$what $where")
+    }
 }
