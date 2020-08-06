@@ -19,17 +19,35 @@ import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import kotlinx.android.synthetic.main.fragment_scan.*
 import org.w3c.dom.Text
+import sini.foxy.furscanner.Modes
 import sini.foxy.furscanner.R
+import sini.foxy.furscanner.model.DataBaseManager
+import sini.foxy.furscanner.model.Listeners.AbstractObservable
+import sini.foxy.furscanner.model.Listeners.InterfaceObserver
 import java.util.*
 
 /**
  * Contains the Camera Scanner
  */
-class ScanFrag : AbstractPasserFragment() {
+class ScanFrag(override var observable: AbstractObservable) : AbstractPasserFragment() ,InterfaceObserver{
     val  toneGen = ToneGenerator(AudioManager.STREAM_MUSIC,100)
     var  scanTimeout = false
+    var dataBase = observable as DataBaseManager
+    lateinit var farmLabel :   TextView
+    lateinit var    IDlabel :  TextView
+    lateinit var houselabel :  TextView
+    lateinit var  cagelabel :  TextView
+    override fun onUpdate() {
+        farmLabel.setText((dataBase.getContainer(Modes.BREED).last().birthFarm))
+        IDlabel.setText((dataBase.getContainer(Modes.BREED).last().sampoId))
+        houselabel.setText(dataBase.getContainer(Modes.BREED).last().getLocation().house.toString())
+        cagelabel.setText(dataBase.getContainer(Modes.BREED).last().getLocation().cage.toString())
+    }
 
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        dataBase.addObserver(this)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,10 +59,11 @@ class ScanFrag : AbstractPasserFragment() {
             passData("test","sss")
 
         }
-        val label = view.findViewById<TextView>(R.id.item_farm_and_id_CageLabel)
-        label.setOnClickListener{
-            println("Clicks")
-        }
+        farmLabel = view.findViewById(R.id.item_farm_and_id_FarmLabel)
+        IDlabel = view.findViewById(R.id.item_farm_and_id_IDLabel)
+        houselabel = view.findViewById(R.id.item_farm_and_id_HouseLabel)
+        cagelabel= view.findViewById(R.id.item_farm_and_id_CageLabel)
+
         return view
     }
     fun scanFromFragment() {

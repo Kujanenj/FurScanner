@@ -19,7 +19,7 @@ class MyPagerAdapter (fragManager: FragmentManager,val dataBaseManger : DataBase
             0 -> {
                 InitFrag(dataBaseManger)
             }
-            1 -> ScanFrag()
+            1 -> ScanFrag(dataBaseManger)
             else -> {
                 return PrevFrag(dataBaseManger.getContainer(Modes.BREED))
             }
